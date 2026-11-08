@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Mainuddin"
+    given-names: "Sk."
+    email: "sk.mainuddin745@gmail.com"
+title: "EconAgent Platform: Institutional Bloomberg-Grade Multi-Agent Economic Intelligence and Geospatial Tanker Tracking Engine"
+version: 2.1.0
+date-released: 2026-11-09
+url: "https://github.com/skmainuddin745-spec/EconAgent-Platform"
+repository-code: "https://github.com/skmainuddin745-spec/EconAgent-Platform"
+keywords:
+  - quantitative-finance
+  - multi-agent-systems
+  - valuation
+  - macroeconomics
+  - damodaran
+  - ais-maritime-tracking
+  - bloomberg-terminal
+license: MIT
+

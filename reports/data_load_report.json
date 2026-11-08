@@ -1,0 +1,3089 @@
+{
+  "total_files": 515,
+  "loaded_ok": 507,
+  "load_errors": 8,
+  "log": [
+    {
+      "key": "Corporate Governance/inshold",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Corporate Governance/insholdChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Corporate Governance/insholdemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Corporate Governance/insholdEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Corporate Governance/insholdGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Corporate Governance/insholdIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Corporate Governance/insholdJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Corporate Governance/insholdRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Risk & Discount Rates/betaChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/betaemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 16
+    },
+    {
+      "key": "Risk & Discount Rates/betaEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 16
+    },
+    {
+      "key": "Risk & Discount Rates/betaGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 16
+    },
+    {
+      "key": "Risk & Discount Rates/betaIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Risk & Discount Rates/betaJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/betaRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/betas",
+      "status": "OK",
+      "rows": 96,
+      "cols": 16
+    },
+    {
+      "key": "Risk & Discount Rates/ctryprem",
+      "status": "OK",
+      "rows": 203,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/ctrypremApr26",
+      "status": "OK",
+      "rows": 203,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/ctrypremJuly25",
+      "status": "OK",
+      "rows": 203,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/ctrypremJuly26",
+      "status": "OK",
+      "rows": 203,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/ctrypremJune13",
+      "status": "OK",
+      "rows": 155,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/ERPbymonth",
+      "status": "OK",
+      "rows": 14,
+      "cols": 4
+    },
+    {
+      "key": "Risk & Discount Rates/ERPNov26",
+      "status": "OK",
+      "rows": 136,
+      "cols": 21
+    },
+    {
+      "key": "Risk & Discount Rates/histimpl",
+      "status": "ERROR",
+      "error": ""
+    },
+    {
+      "key": "Risk & Discount Rates/histretSP",
+      "status": "OK",
+      "rows": 91,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/mktcaprisk",
+      "status": "OK",
+      "rows": 18,
+      "cols": 11
+    },
+    {
+      "key": "Risk & Discount Rates/totalbeta",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Risk & Discount Rates/totalbetaChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Risk & Discount Rates/totalbetaemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Risk & Discount Rates/totalbetaEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Risk & Discount Rates/totalbetaGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Risk & Discount Rates/totalbetaIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Risk & Discount Rates/totalbetaJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Risk & Discount Rates/totalbetaRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Cost of Capital/wacc",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cost of Capital/waccChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cost of Capital/waccemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cost of Capital/waccEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cost of Capital/waccGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Cost of Capital/waccIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cost of Capital/waccJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cost of Capital/waccRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Company & Market Metrics/DollarChina",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Company & Market Metrics/Dollaremerg",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Company & Market Metrics/DollarEurope",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Company & Market Metrics/DollarGlobal",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Company & Market Metrics/DollarIndia",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Company & Market Metrics/DollarJapan",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Company & Market Metrics/DollarRest",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Company & Market Metrics/DollarUS",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Company & Market Metrics/Employee",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Company & Market Metrics/EmployeeChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Company & Market Metrics/Employeeemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Company & Market Metrics/EmployeeEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Company & Market Metrics/EmployeeGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Company & Market Metrics/EmployeeIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Company & Market Metrics/EmployeeJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Company & Market Metrics/EmployeeRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Company & Market Metrics/MktCap",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Company & Market Metrics/MktCapChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Company & Market Metrics/MktCapemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Company & Market Metrics/MktCapEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Company & Market Metrics/MktCapGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Company & Market Metrics/MktCapIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Company & Market Metrics/MktCapJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Company & Market Metrics/mktcapmult",
+      "status": "OK",
+      "rows": 19,
+      "cols": 17
+    },
+    {
+      "key": "Company & Market Metrics/MktCapRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 21
+    },
+    {
+      "key": "Return on Capital & EVA/EVA",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Return on Capital & EVA/EVAChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Return on Capital & EVA/EVAemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Return on Capital & EVA/EVAEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Return on Capital & EVA/EVAGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Return on Capital & EVA/EVAIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Return on Capital & EVA/EVAJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Return on Capital & EVA/EVARest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Capital Structure & Debt/dbtfund",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Capital Structure & Debt/dbtfundChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Capital Structure & Debt/dbtfundemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Capital Structure & Debt/dbtfundEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Capital Structure & Debt/dbtfundGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Capital Structure & Debt/dbtfundIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Capital Structure & Debt/dbtfundJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Capital Structure & Debt/dbtfundRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Capital Structure & Debt/debtdetails",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Capital Structure & Debt/debtdetailsChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Capital Structure & Debt/debtdetailsemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Capital Structure & Debt/debtdetailsEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Capital Structure & Debt/debtdetailsGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Capital Structure & Debt/debtdetailsIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Capital Structure & Debt/debtdetailsJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Capital Structure & Debt/debtdetailsRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Capital Structure & Debt/leaseeffect",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Capital Structure & Debt/leaseeffectChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Capital Structure & Debt/leaseeffectemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Capital Structure & Debt/leaseeffectEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Capital Structure & Debt/leaseeffectGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Capital Structure & Debt/leaseeffectIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Capital Structure & Debt/leaseeffectJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Capital Structure & Debt/leaseeffectRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Capital Structure & Debt/macro",
+      "status": "OK",
+      "rows": 17,
+      "cols": 9
+    },
+    {
+      "key": "Capital Structure & Debt/macrodur",
+      "status": "OK",
+      "rows": 33,
+      "cols": 9
+    },
+    {
+      "key": "Capital Structure & Debt/ratings",
+      "status": "ERROR",
+      "error": ""
+    },
+    {
+      "key": "Dividend & Payout Policy/divfcfe",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Dividend & Payout Policy/divfcfeChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Dividend & Payout Policy/divfcfeemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Dividend & Payout Policy/divfcfeEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Dividend & Payout Policy/divfcfeGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Dividend & Payout Policy/divfcfeIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Dividend & Payout Policy/divfcfeJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Dividend & Payout Policy/divfcfeRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Dividend & Payout Policy/divfund",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Dividend & Payout Policy/divfundChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Dividend & Payout Policy/divfundemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Dividend & Payout Policy/divfundEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Dividend & Payout Policy/divfundGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Dividend & Payout Policy/divfundIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Dividend & Payout Policy/divfundJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Dividend & Payout Policy/divfundRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/capex",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/capexChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/capexemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/capexEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/capexGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/capexIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/capexJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/capexRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Cash Flows & CapEx/R&D",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cash Flows & CapEx/R&DChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cash Flows & CapEx/R&Demerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cash Flows & CapEx/R&DEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cash Flows & CapEx/R&DGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cash Flows & CapEx/R&DIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cash Flows & CapEx/R&DJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Cash Flows & CapEx/R&DRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Balance Sheet & Intangibles/goodwill",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Balance Sheet & Intangibles/goodwillChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Balance Sheet & Intangibles/goodwillemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Balance Sheet & Intangibles/goodwillEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Balance Sheet & Intangibles/goodwillGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Balance Sheet & Intangibles/goodwillIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Balance Sheet & Intangibles/goodwillJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Balance Sheet & Intangibles/goodwillRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Margins & Profitability/countrytaxrates",
+      "status": "OK",
+      "rows": 251,
+      "cols": 3
+    },
+    {
+      "key": "Margins & Profitability/margin",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Margins & Profitability/marginChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Margins & Profitability/marginemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Margins & Profitability/marginEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Margins & Profitability/marginGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Margins & Profitability/marginIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Margins & Profitability/marginJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Margins & Profitability/marginRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Margins & Profitability/psChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Margins & Profitability/psdata",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Margins & Profitability/psemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Margins & Profitability/psEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Margins & Profitability/psGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Margins & Profitability/psIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Margins & Profitability/psJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Margins & Profitability/psRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Financing & Capital Flows/finflows",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Financing & Capital Flows/finflowsChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Financing & Capital Flows/finflowsemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Financing & Capital Flows/finflowsEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Financing & Capital Flows/finflowsGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Financing & Capital Flows/finflowsIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Financing & Capital Flows/finflowsJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Financing & Capital Flows/finflowsRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Working Capital/wcdata",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Working Capital/wcdataChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Working Capital/wcdataemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Working Capital/wcdataEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Working Capital/wcdataGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Working Capital/wcdataIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Working Capital/wcdataJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Working Capital/wcdataRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Growth Rates/fundgr",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEB",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEBChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEBemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEBEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEBGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEBIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEBJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEBRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgremerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/fundgrRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Growth Rates/histgr",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Growth Rates/histgrChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Growth Rates/histgremerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Growth Rates/histgrEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Growth Rates/histgrGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Growth Rates/histgrIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Growth Rates/histgrJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Growth Rates/histgrRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Growth Rates/roe",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Growth Rates/roeChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Growth Rates/roeemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Growth Rates/roeEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Growth Rates/roeGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Growth Rates/roeIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Growth Rates/roeJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Growth Rates/roeRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Valuation Multiples/countrystats",
+      "status": "OK",
+      "rows": 127,
+      "cols": 20
+    },
+    {
+      "key": "Valuation Multiples/pbvChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Valuation Multiples/pbvdata",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Valuation Multiples/pbvemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Valuation Multiples/pbvEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Valuation Multiples/pbvGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Valuation Multiples/pbvIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Valuation Multiples/pbvJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Valuation Multiples/pbvRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Valuation Multiples/peChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/pedata",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/peemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/peEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/peGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/peIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/peJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/peRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/vebitda",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/vebitdaChina",
+      "status": "OK",
+      "rows": 97,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/vebitdaemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/vebitdaEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/vebitdaGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/vebitdaIndia",
+      "status": "OK",
+      "rows": 97,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/vebitdaJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Valuation Multiples/vebitdaRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Tax Rates/taxrate",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Tax Rates/taxrateChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Tax Rates/taxrateemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Tax Rates/taxrateEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Tax Rates/taxrateGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Tax Rates/taxrateIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Tax Rates/taxrateJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Tax Rates/taxrateRest",
+      "status": "OK",
+      "rows": 97,
+      "cols": 11
+    },
+    {
+      "key": "Option Pricing & Volatility/optvar",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Option Pricing & Volatility/optvarChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Option Pricing & Volatility/optvaremerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Option Pricing & Volatility/optvarEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Option Pricing & Volatility/optvarGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Option Pricing & Volatility/optvarIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Option Pricing & Volatility/optvarJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Option Pricing & Volatility/optvarRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/01_United_States/betas",
+      "status": "OK",
+      "rows": 96,
+      "cols": 16
+    },
+    {
+      "key": "Regional/01_United_States/capex",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/01_United_States/countrystats",
+      "status": "OK",
+      "rows": 127,
+      "cols": 20
+    },
+    {
+      "key": "Regional/01_United_States/countrytaxrates",
+      "status": "OK",
+      "rows": 251,
+      "cols": 3
+    },
+    {
+      "key": "Regional/01_United_States/dbtfund",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Regional/01_United_States/debtdetails",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/01_United_States/divfcfe",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Regional/01_United_States/divfund",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/01_United_States/DollarUS",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Regional/01_United_States/Employee",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Regional/01_United_States/ERPbymonth",
+      "status": "OK",
+      "rows": 14,
+      "cols": 4
+    },
+    {
+      "key": "Regional/01_United_States/ERPNov26",
+      "status": "OK",
+      "rows": 136,
+      "cols": 21
+    },
+    {
+      "key": "Regional/01_United_States/EVA",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/01_United_States/finflows",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/01_United_States/fundgr",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/01_United_States/fundgrEB",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/01_United_States/goodwill",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/01_United_States/histgr",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/01_United_States/histimpl",
+      "status": "ERROR",
+      "error": ""
+    },
+    {
+      "key": "Regional/01_United_States/histretSP",
+      "status": "OK",
+      "rows": 91,
+      "cols": 11
+    },
+    {
+      "key": "Regional/01_United_States/inshold",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/01_United_States/leaseeffect",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Regional/01_United_States/macro",
+      "status": "OK",
+      "rows": 17,
+      "cols": 9
+    },
+    {
+      "key": "Regional/01_United_States/macrodur",
+      "status": "OK",
+      "rows": 33,
+      "cols": 9
+    },
+    {
+      "key": "Regional/01_United_States/margin",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/01_United_States/MktCap",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Regional/01_United_States/mktcapmult",
+      "status": "OK",
+      "rows": 19,
+      "cols": 17
+    },
+    {
+      "key": "Regional/01_United_States/mktcaprisk",
+      "status": "OK",
+      "rows": 18,
+      "cols": 11
+    },
+    {
+      "key": "Regional/01_United_States/optvar",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/01_United_States/pbvdata",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/01_United_States/pedata",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/01_United_States/psdata",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/01_United_States/R&D",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/01_United_States/ratings",
+      "status": "ERROR",
+      "error": ""
+    },
+    {
+      "key": "Regional/01_United_States/roe",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Regional/01_United_States/taxrate",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/01_United_States/totalbeta",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/01_United_States/vebitda",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/01_United_States/wacc",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/01_United_States/wcdata",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/02_Europe/betaEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 16
+    },
+    {
+      "key": "Regional/02_Europe/capexEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/02_Europe/dbtfundEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Regional/02_Europe/debtdetailsEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/02_Europe/divfcfeEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Regional/02_Europe/divfundEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/02_Europe/DollarEurope",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Regional/02_Europe/EmployeeEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Regional/02_Europe/EVAEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/02_Europe/finflowsEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/02_Europe/fundgrEBEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/02_Europe/fundgrEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/02_Europe/goodwillEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/02_Europe/histgrEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/02_Europe/insholdEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/02_Europe/leaseeffectEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Regional/02_Europe/marginEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/02_Europe/MktCapEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Regional/02_Europe/optvarEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/02_Europe/pbvEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/02_Europe/peEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/02_Europe/psEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/02_Europe/R&DEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/02_Europe/roeEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Regional/02_Europe/taxrateEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/02_Europe/totalbetaEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/02_Europe/vebitdaEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/02_Europe/waccEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/02_Europe/wcdataEurope",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/03_Japan/betaJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/03_Japan/capexJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/03_Japan/dbtfundJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Regional/03_Japan/debtdetailsJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/03_Japan/divfcfeJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Regional/03_Japan/divfundJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/03_Japan/DollarJapan",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Regional/03_Japan/EmployeeJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Regional/03_Japan/EVAJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/03_Japan/finflowsJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/03_Japan/fundgrEBJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/03_Japan/fundgrJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/03_Japan/goodwillJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/03_Japan/histgrJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/03_Japan/insholdJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/03_Japan/leaseeffectJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Regional/03_Japan/marginJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/03_Japan/MktCapJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Regional/03_Japan/optvarJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/03_Japan/pbvJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/03_Japan/peJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/03_Japan/psJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/03_Japan/R&DJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/03_Japan/roeJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Regional/03_Japan/taxrateJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/03_Japan/totalbetaJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/03_Japan/vebitdaJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/03_Japan/waccJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/03_Japan/wcdataJapan",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/betaRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/capexRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/dbtfundRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/debtdetailsRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/divfcfeRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/divfundRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/DollarRest",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/EmployeeRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/EVARest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/finflowsRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/fundgrEBRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/fundgrRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/goodwillRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/histgrRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/insholdRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/leaseeffectRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/marginRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/MktCapRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 21
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/optvarRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/pbvRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/peRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/psRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/R&DRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/roeRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/taxrateRest",
+      "status": "OK",
+      "rows": 97,
+      "cols": 11
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/totalbetaRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/vebitdaRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/waccRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/04_Aus_NZ_Canada/wcdataRest",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/betaemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 16
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/capexemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/dbtfundemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/debtdetailsemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/divfcfeemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/divfundemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/Dollaremerg",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/Employeeemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/EVAemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/finflowsemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/fundgrEBemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/fundgremerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/goodwillemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/histgremerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/insholdemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/leaseeffectemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/marginemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/MktCapemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/optvaremerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/pbvemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/peemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/psemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/R&Demerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/roeemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/taxrateemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/totalbetaemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/vebitdaemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/waccemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/05_Emerging_Markets/wcdataemerg",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/06_India/betaIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Regional/06_India/capexIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/06_India/dbtfundIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Regional/06_India/debtdetailsIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/06_India/divfcfeIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Regional/06_India/divfundIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/06_India/DollarIndia",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Regional/06_India/EmployeeIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Regional/06_India/EVAIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/06_India/finflowsIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/06_India/fundgrEBIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/06_India/fundgrIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/06_India/goodwillIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/06_India/histgrIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/06_India/insholdIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/06_India/leaseeffectIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Regional/06_India/marginIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/06_India/MktCapIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Regional/06_India/optvarIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/06_India/pbvIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/06_India/peIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/06_India/psIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/06_India/R&DIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/06_India/roeIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Regional/06_India/taxrateIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/06_India/totalbetaIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/06_India/vebitdaIndia",
+      "status": "OK",
+      "rows": 97,
+      "cols": 10
+    },
+    {
+      "key": "Regional/06_India/waccIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/06_India/wcdataIndia",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/07_China/betaChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/07_China/capexChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/07_China/dbtfundChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Regional/07_China/debtdetailsChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/07_China/divfcfeChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Regional/07_China/divfundChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/07_China/DollarChina",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Regional/07_China/EmployeeChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Regional/07_China/EVAChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/07_China/finflowsChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/07_China/fundgrChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/07_China/fundgrEBChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/07_China/goodwillChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/07_China/histgrChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/07_China/insholdChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/07_China/leaseeffectChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Regional/07_China/marginChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/07_China/MktCapChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Regional/07_China/optvarChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/07_China/pbvChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/07_China/peChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/07_China/psChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/07_China/R&DChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/07_China/roeChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Regional/07_China/taxrateChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/07_China/totalbetaChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/07_China/vebitdaChina",
+      "status": "OK",
+      "rows": 97,
+      "cols": 10
+    },
+    {
+      "key": "Regional/07_China/waccChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/07_China/wcdataChina",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/08_Global/betaGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 16
+    },
+    {
+      "key": "Regional/08_Global/capexGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/08_Global/ctryprem",
+      "status": "OK",
+      "rows": 203,
+      "cols": 11
+    },
+    {
+      "key": "Regional/08_Global/ctrypremApr26",
+      "status": "OK",
+      "rows": 203,
+      "cols": 11
+    },
+    {
+      "key": "Regional/08_Global/ctrypremJuly25",
+      "status": "OK",
+      "rows": 203,
+      "cols": 11
+    },
+    {
+      "key": "Regional/08_Global/ctrypremJuly26",
+      "status": "OK",
+      "rows": 203,
+      "cols": 11
+    },
+    {
+      "key": "Regional/08_Global/ctrypremJune13",
+      "status": "OK",
+      "rows": 155,
+      "cols": 11
+    },
+    {
+      "key": "Regional/08_Global/dbtfundGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 15
+    },
+    {
+      "key": "Regional/08_Global/debtdetailsGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/08_Global/divfcfeGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 14
+    },
+    {
+      "key": "Regional/08_Global/divfundGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/08_Global/DollarGlobal",
+      "status": "OK",
+      "rows": 94,
+      "cols": 13
+    },
+    {
+      "key": "Regional/08_Global/EmployeeGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 9
+    },
+    {
+      "key": "Regional/08_Global/EVAGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/08_Global/finflowsGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/08_Global/fundgrEBGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/08_Global/fundgrGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 5
+    },
+    {
+      "key": "Regional/08_Global/goodwillGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/08_Global/histgrGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/08_Global/insholdGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/08_Global/leaseeffectGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 18
+    },
+    {
+      "key": "Regional/08_Global/marginGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 19
+    },
+    {
+      "key": "Regional/08_Global/MktCapGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 17
+    },
+    {
+      "key": "Regional/08_Global/optvarGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/08_Global/pbvGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/08_Global/peGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/08_Global/psGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Regional/08_Global/R&DGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 12
+    },
+    {
+      "key": "Regional/08_Global/roeGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 4
+    },
+    {
+      "key": "Regional/08_Global/taxrateGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/08_Global/totalbetaGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 7
+    },
+    {
+      "key": "Regional/08_Global/vebitdaGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 10
+    },
+    {
+      "key": "Regional/08_Global/waccGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 11
+    },
+    {
+      "key": "Regional/08_Global/wcdataGlobal",
+      "status": "OK",
+      "rows": 96,
+      "cols": 6
+    },
+    {
+      "key": "Industry Taxonomy/indname",
+      "status": "OK",
+      "rows": 48147,
+      "cols": 8
+    },
+    {
+      "key": "Industry Taxonomy/indname",
+      "status": "OK",
+      "rows": 48156,
+      "cols": 8
+    },
+    {
+      "key": "Data Tools & Models/AppleTTM",
+      "status": "OK",
+      "rows": 100,
+      "cols": 20
+    },
+    {
+      "key": "Data Tools & Models/Disneyratings",
+      "status": "ERROR",
+      "error": ""
+    },
+    {
+      "key": "Data Tools & Models/DisneyregressionExcel",
+      "status": "OK",
+      "rows": 111,
+      "cols": 12
+    },
+    {
+      "key": "Data Tools & Models/Disneyriskchecker",
+      "status": "OK",
+      "rows": 118,
+      "cols": 9
+    },
+    {
+      "key": "Data Tools & Models/dividends",
+      "status": "OK",
+      "rows": 1,
+      "cols": 1
+    },
+    {
+      "key": "Data Tools & Models/ERPFeb14",
+      "status": "ERROR",
+      "error": ""
+    },
+    {
+      "key": "Data Tools & Models/fcffsimpleginzu",
+      "status": "OK",
+      "rows": 96,
+      "cols": 27
+    },
+    {
+      "key": "Data Tools & Models/implprem",
+      "status": "OK",
+      "rows": 13,
+      "cols": 7
+    },
+    {
+      "key": "Data Tools & Models/levbeta",
+      "status": "OK",
+      "rows": 20,
+      "cols": 6
+    },
+    {
+      "key": "Data Tools & Models/MicrosoftR&D",
+      "status": "OK",
+      "rows": 98,
+      "cols": 4
+    },
+    {
+      "key": "Data Tools & Models/oplease",
+      "status": "OK",
+      "rows": 30,
+      "cols": 7
+    },
+    {
+      "key": "Data Tools & Models/P&Gvaluationfixed",
+      "status": "OK",
+      "rows": 100,
+      "cols": 19
+    },
+    {
+      "key": "Data Tools & Models/R&DConv",
+      "status": "OK",
+      "rows": 98,
+      "cols": 4
+    },
+    {
+      "key": "Data Tools & Models/ratings",
+      "status": "ERROR",
+      "error": ""
+    },
+    {
+      "key": "Data Tools & Models/returncalculator",
+      "status": "OK",
+      "rows": 127,
+      "cols": 6
+    },
+    {
+      "key": "Data Tools & Models/S&P500ValueJan2025",
+      "status": "ERROR",
+      "error": ""
+    },
+    {
+      "key": "Data Tools & Models/SP500eps",
+      "status": "OK",
+      "rows": 99,
+      "cols": 9
+    }
+  ]
+}

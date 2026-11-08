@@ -1,0 +1,106 @@
+# Maritime BMAP Engine: Geospatial Telemetry & Macroeconomic Shock Transmission
+
+> **System ID:** `BMAP-MARITIME-GEO-V2`  
+> **Platform Module:** `platform_ui/bmap_tanker_component.py` & `Bloomberg_BMAP_Terminal.html`  
+> **Author:** Sk. Mainuddin ([sk.mainuddin745@gmail.com](mailto:sk.mainuddin745@gmail.com))  
+> **Telemetry Scope:** 45+ Commercial Oil Tankers · 7 Planetary Choke Points · 6 Vector Viewports  
+
+---
+
+## 1. Architectural Overview
+
+The **BMAP <GO>** Maritime Tracking Engine couples real-time geospatial AIS (Automatic Identification System) vector telemetry with corporate finance valuation models. It tracks global crude and refined product flows across critical sea-lanes and maps geopolitical transit disruptions directly into corporate income statements and discounted cash flow models.
+
+```
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │                GEOSPATIAL AIS TELEMETRY (45+ TANKERS)                  │
+   │  • Lat / Lon Coordinates      • SOG (Speed Over Ground)                │
+   │  • COG (Course Over Ground)   • Draught & Deadweight Tonnage (DWT)     │
+   │  • Destination & ETA          • Cargo Classification (Crude vs Product)│
+   └───────────────────────────────────┬────────────────────────────────────┘
+                                       │
+                                       ▼
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │                 STRATEGIC MARITIME CHOKE POINT MONITOR                 │
+   │   Hormuz · Malacca · Bab el-Mandeb / Suez · Houston · Good Hope        │
+   └───────────────────────────────────┬────────────────────────────────────┘
+                                       │
+                                       ▼
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │              CAUSAL COMMODITY SHOCK TRANSMISSION ENGINE                │
+   │  1. Transit Delay (Days) ──► 2. Freight & Demurrage Spike ($/DWT)      │
+   │  3. Feedstock Inflation  ──► 4. Corporate EBITDA Margin Delta (%)      │
+   │  5. Systemic WACC Shift  ──► 6. DCF Equity Value Re-Rating (%)         │
+   └────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 2. Strategic Maritime Bottlenecks & Kinematic Vectors
+
+| Sea-Lane Choke Point | Daily Volume (Mbd) | Share of Global Seaborne Trade | Typical Transit Velocity (knots) | Rerouting Alternative | Transit Delay Delta |
+|---|---|---|---|---|---|
+| **Strait of Hormuz** | **20.8 Mbd** | 20.6 % | 12.5 | None (Land pipeline capacity < 4 Mbd) | Complete Cutoff |
+| **Strait of Malacca** | **16.2 Mbd** | 16.0 % | 11.2 | Lombok / Makassar Straits | +3 to +5 Days |
+| **Bab el-Mandeb / Suez** | **8.8 Mbd** | 8.7 % | 13.0 | Cape of Good Hope | +10 to +14 Days |
+| **Cape of Good Hope** | **5.8 Mbd** | 5.7 % | 14.5 | Primary long-haul corridor | Baseline |
+| **Houston Ship Channel** | **3.4 Mbd** | 3.4 % | 7.8 | US Pipeline grid | Congestion queue |
+| **Danish Straits** | **3.2 Mbd** | 3.2 % | 10.5 | North Sea routing | Weather delays |
+| **Turkish Straits (Bosphorus)**| **2.4 Mbd** | 2.4 % | 8.0 | Trans-Balkan pipeline (limited) | +4 to +8 Days |
+
+---
+
+## 3. Causal Transmission Equations: From AIS Delay to Corporate DCF
+
+When maritime security incidents, canal blockages, or geopolitical sanctions disrupt sea-lanes, the economic damage propagates through four quantifiable transmission phases:
+
+### Phase I: Voyage Time Dilation & Freight Rate Dynamic
+Let standard round-trip voyage duration be $T_{\text{std}}$ and voyage disruption delay be $\Delta T$. Effective fleet capacity shrinks proportionally:
+$$\text{Effective Fleet Capacity Factor} = \frac{T_{\text{std}}}{T_{\text{std}} + \Delta T}$$
+With inelastic global tanker demand, spot charter rates (Worldscale / VLCC Day Rates) expand exponentially:
+$$\text{Charter Rate} = R_0 \times \exp\left( \gamma \frac{\Delta T}{T_{\text{std}}} \right) + \Pi_{\text{war risk}}$$
+Where $\gamma \approx 1.8$ and $\Pi_{\text{war risk}}$ is the hull insurance surcharge.
+
+### Phase II: Raw Material Cost (COGS) Transmission
+For downstream chemical, industrial, and consumer goods companies, input feedstock costs rise:
+$$\Delta \text{COGS}_{\text{raw}} = \sum_{m} \omega_m \left( \Delta P_m + \Delta \text{Freight}_m \right)$$
+
+### Phase III: Corporate EBITDA Margin Sensitivity
+$$\Delta \text{Margin}_{\text{EBITDA}} = - \omega_{\text{petro}} \left(\frac{\Delta P_{\text{feedstock}}}{P_{\text{feedstock}}}\right) \left( 1 - \kappa_{\text{pass-through}} \right)$$
+
+#### Case Study: Pidilite Industries (Adhesives & Sealants)
+- Primary Feedstock: **Vinyl Acetate Monomer (VAM)**.
+- VAM Cost Share ($\omega_{\text{petro}}$): $\approx 42 \%$ of total material consumption.
+- Short-Term Pass-Through ($\kappa_{\text{pass-through}}$): $0.35$ (contracts and retail sticker inertia prevent immediate price hikes).
+- Long-Term Pass-Through (12M): $0.85$.
+- Result of a $+30 \%$ VAM spike:
+  $$\Delta \text{EBITDA Margin}_{\text{short-term}} = -0.42 \times 0.30 \times (1 - 0.35) = -8.19 \% \text{ margin compression}$$
+
+#### Case Study: APL Apollo Tubes (Structural Steel & Freight)
+- Primary Vulnerability: Ocean freight for imported raw coils and export freight.
+- Freight Cost Share: $\approx 8.5 \%$ of gross revenues.
+- Pass-Through: $0.60$.
+- Result of $+50 \%$ maritime freight rate spike:
+  $$\Delta \text{EBITDA Margin} = -0.085 \times 0.50 \times (1 - 0.60) = -1.70 \% \text{ margin compression}$$
+
+### Phase IV: Enterprise DCF Valuation Impact
+$$\text{Enterprise Value} = \sum_{t=1}^N \frac{\text{FCFF}_t}{(1 + \text{WACC})^t} + \frac{\text{FCFF}_N (1 + g)}{(\text{WACC} - g)(1 + \text{WACC})^N}$$
+Systemic oil shocks elevate headline CPI, shifting central bank policy rates:
+$$\Delta \text{WACC} = \left(\frac{E}{V}\right) \Delta R_f + \left(\frac{D}{V}\right) \Delta K_d (1 - T)$$
+Combining EBITDA margin contraction (reducing numerator $\text{FCFF}_t$) with elevated WACC (expanding denominator) generates severe equity re-ratings:
+$$\frac{\Delta \text{Equity Value}}{\text{Equity Value}} \approx \frac{\Delta \text{FCFF}_1}{\text{FCFF}_1} - \frac{\Delta \text{WACC}}{\text{WACC} - g}$$
+
+---
+
+## 4. Hardware-Accelerated Vector Canvas Architecture
+
+The BMAP interface is implemented as a high-density, zero-dependency HTML5 `<canvas>` and Leaflet vector map:
+1. **Double-Buffered Rendering:** Tanker positions, headings, and trails are rendered at 60 FPS without DOM reflow.
+2. **Dynamic AIS Projection:** Coordinates $(\lambda, \phi)$ are projected into Web Mercator coordinates with real-time zooming and viewport panning.
+3. **Interactive Fleet Inspector:** Hovering over any tanker reveals:
+   - MMSI, IMO, Vessel Name, Flag State.
+   - Deadweight Tonnage (DWT) and Cargo Volume (Barrels).
+   - Speed Over Ground (SOG) and Course Over Ground (COG).
+   - Origin Port, Destination, and Estimated Time of Arrival (ETA).
+   - Real-time sensitivity badge linking the vessel's cargo to downstream industrial tickers.
+

@@ -1,0 +1,747 @@
+# F:\documents\SOIC\EconAgent_Platform\platform_ui\build_perfect_bmap_suite.py
+"""
+build_perfect_bmap_suite.py
+Constructs the complete, rigorous, authentic Bloomberg Terminal Map Suite:
+1. Rewrites bmap_html_template.html with authentic docked Map Content sidebar,
+   collapsible Suggested Datasets (24) and New Datasets (12), View All Datasets modal,
+   and dynamic multi-legend container.
+2. Rewrites bmap_js_template.js with Canvas Heatmap Engine (Cloud Cover & Temperature),
+   World Equity Markets choropleth, full dynamic sidebar card controllers,
+   live AIS dead-reckoning kinematics, high-res satellite zoom LOD,
+   and all secondary views (Table, Chart, News, SPLC, FXC, VOL).
+3. Executes assemble_bmap_v6.py, build_standalone_bmap.py, and generate_dashboard.py
+   to update Bloomberg_BMAP_Terminal.html and EconAgent_Dashboard.html.
+"""
+
+import os
+import sys
+import json
+
+BASE_DIR = r"F:\documents\SOIC\EconAgent_Platform\platform_ui"
+sys.path.insert(0, BASE_DIR)
+
+from generate_full_bloomberg_suite import (
+    CRUDE_PIPELINES,
+    GAS_PIPELINES_NAM,
+    BERTH_VISITS,
+    MANHATTAN_STREET_BRANCHES,
+    GREG_MORTIMER,
+    WORLD_EQUITY_DATA,
+    SPLC_NETWORKS,
+    FXC_DATA,
+    READ_NEWS_STORIES
+)
+import global_assets_data as gad
+
+print("Starting compilation of Perfect Bloomberg Terminal Map Suite...")
+
+# ==============================================================================
+# PART 1: GENERATE UPGRADED bmap_html_template.html
+# ==============================================================================
+
+def generate_html_template():
+    return '''
+<style>
+.leaflet-tooltip.bb-custom-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+.leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
+  display: none !important;
+}
+</style>
+
+<!-- ── AUTHENTIC BLOOMBERG TERMINAL TOP WINDOW TABS & NAVIGATION (SCREENSHOTS 4 & 27) ── -->
+<div style="background: #000; border: 1px solid #1a2736; border-radius: 6px 6px 0 0; padding: 4px 10px; font-family: var(--font-mono); font-size: 11px;">
+  
+  <!-- Window Tabs Bar -->
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #162438; padding-bottom: 4px; margin-bottom: 4px;">
+    <div style="display: flex; align-items: center; gap: 4px;">
+      <div style="background: #0d1726; color: #94a3b8; border: 1px solid #1e334d; padding: 2px 8px; border-radius: 3px 3px 0 0; font-size: 10px; cursor: pointer;" onclick="switchBmapTicker('SPY')">GPC SPDR S&amp;P 500 ETF Equity</div>
+      <div style="background: #1e3a5f; color: #00e5ff; border: 1px solid #3b82f6; border-bottom: none; padding: 2px 10px; border-radius: 3px 3px 0 0; font-size: 10px; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+        <span>MAP Custom Map</span>
+        <span style="font-size: 9px; cursor: pointer;" onclick="alert('Default Map Locked');">✕</span>
+      </div>
+      <div style="background: #0d1726; color: #94a3b8; border: 1px solid #1e334d; padding: 2px 8px; border-radius: 3px 3px 0 0; font-size: 10px; cursor: pointer;" onclick="switchBmapView('table')">Table (Berth Visits)</div>
+      <div style="background: #0d1726; color: #94a3b8; border: 1px solid #1e334d; padding: 2px 8px; border-radius: 3px 3px 0 0; font-size: 10px; cursor: pointer;" onclick="switchBmapView('chart')">Chart (GPC)</div>
+      <div style="background: #0d1726; color: #94a3b8; border: 1px solid #1e334d; padding: 2px 8px; border-radius: 3px 3px 0 0; font-size: 10px; cursor: pointer;" onclick="switchBmapView('news')">News (READ)</div>
+      <div style="background: #0d1726; color: #94a3b8; border: 1px solid #1e334d; padding: 2px 8px; border-radius: 3px 3px 0 0; font-size: 10px; cursor: pointer;" onclick="switchBmapView('splc')">SPLC Supply Chain Analysis</div>
+      <div style="background: #0d1726; color: #94a3b8; border: 1px solid #1e334d; padding: 2px 8px; border-radius: 3px 3px 0 0; font-size: 10px; cursor: pointer;" onclick="switchBmapView('fxc')">FXC Currency Rates Matrix</div>
+      <div style="background: #0d1726; color: #94a3b8; border: 1px solid #1e334d; padding: 2px 8px; border-radius: 3px 3px 0 0; font-size: 10px; cursor: pointer;" onclick="switchBmapView('vol')">VOL 3D Volatility Surface</div>
+      <div style="background: #0d1726; color: #64748b; border: 1px solid #1e334d; padding: 2px 6px; border-radius: 3px; font-size: 10px; cursor: pointer;" onclick="openAllDatasetsModal()">+</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; color: #64748b; font-size: 10.5px;">
+      <span style="cursor: pointer;" onclick="openAllDatasetsModal()">Options</span>
+      <span>_</span>
+      <span>□</span>
+      <span style="color: #ef4444; cursor: pointer;">✕</span>
+    </div>
+  </div>
+
+  <!-- Navigation & Security Select Sub-bar -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 2px 0 4px 0; border-bottom: 1px solid #162438; font-size: 10.5px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="color: #64748b; cursor: pointer;">&lt; &gt;</span>
+      <span style="color: #334155;">|</span>
+      <select id="bb_active_ticker_select" onchange="switchBmapTicker(this.value)" style="background: #080e18; color: #ffaa00; border: 1px solid #203a5e; border-radius: 3px; padding: 2px 6px; font-size: 10.5px; font-weight: 700; font-family: var(--font-mono); outline: none; cursor: pointer;">
+        <option value="SPY">SPDR S&amp;P 500 ETF Equity ▾</option>
+        <option value="AAPL">APPLE INC Equity ▾</option>
+        <option value="TSLA">TESLA INC Equity ▾</option>
+        <option value="LMT">LOCKHEED MARTIN CORP Equity ▾</option>
+        <option value="BRENT">BRENT CRUDE OIL ICE ▾</option>
+        <option value="WTI">WTI CRUDE NYMEX ▾</option>
+        <option value="POLYCAB">POLYCAB INDIA LTD Equity ▾</option>
+        <option value="MPS">MPS LIMITED Equity ▾</option>
+      </select>
+      <span style="color: #94a3b8; cursor: pointer;">MAP ▾</span>
+      <span style="color: #94a3b8; cursor: pointer;" onclick="openAllDatasetsModal();">Related Functions Menu ▾</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; color: #94a3b8;">
+      <span style="cursor: pointer;">✉ Message</span>
+      <span style="color: #334155;">|</span>
+      <span style="color: #00e676; font-weight: 800;">● LIVE AIS</span>
+    </div>
+  </div>
+
+  <!-- Bloomberg Live Financial Quote Bar (Exact Screenshot 4 & 5) -->
+  <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0 2px 0; flex-wrap: wrap; gap: 8px;">
+    <div style="display: flex; align-items: baseline; gap: 10px;">
+      <strong style="color: #ffaa00; font-size: 13px;" id="bb_sym">SPY US $</strong>
+      <span style="color: #00e676; font-size: 14px; font-weight: 900;" id="bb_last">C 404.190</span>
+      <span style="color: #00e676; font-size: 12px; font-weight: 700;" id="bb_chg">+6.380</span>
+      <span style="color: #fff; font-size: 11px; margin-left: 8px;" id="bb_bidask">Z404.120 / 404.130P &nbsp; 11 × 1558</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; font-size: 10.5px; color: #94a3b8;">
+      <span style="background: #ffaa00; color: #000; font-weight: 900; padding: 1px 4px; border-radius: 2px; font-size: 9px;">■</span>
+      <span>On <strong style="color: #fff;" id="bb_date">03 Mar d</strong></span>
+      <span>Vol <strong style="color: #fff;" id="bb_vol">90,119,952</strong></span>
+      <span>O <strong style="color: #fff;" id="bb_open">399.710Z</strong></span>
+      <span>H <strong style="color: #fff;" id="bb_high">404.450B</strong></span>
+      <span>L <strong style="color: #fff;" id="bb_low">399.030T</strong></span>
+      <span>Val <strong style="color: #fff;" id="bb_val">36.272B</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- ── AUTHENTIC BLOOMBERG TERMINAL CRIMSON HEADER RIBBON (SCREENSHOTS 4, 12, 27) ── -->
+<div style="background: linear-gradient(180deg, #781c1c 0%, #5a1414 100%); border: 1px solid #991b1b; border-bottom: 2px solid #b91c1c; padding: 5px 12px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 11px;">
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span style="background: #111a28; color: #ffaa00; font-weight: 900; padding: 2px 7px; border-radius: 2px; font-size: 10.5px; border: 1px solid #ffaa00; cursor: pointer;" onclick="document.getElementById('bmap_universal_search').focus();">&lt;Search&gt;</span>
+    <button id="btn_browse_datasets" onclick="toggleMapContentDrawer()" style="background: #991b1b; color: #fff; border: 1px solid #dc2626; padding: 3px 10px; font-size: 10.5px; font-weight: 800; border-radius: 3px; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+      <span>Browse Datasets</span>
+    </button>
+    <div style="position: relative; display: inline-block;">
+      <button onclick="toggleActionsDropdown()" style="background: #450a0a; color: #fca5a5; border: 1px solid #7f1d1d; padding: 3px 10px; font-size: 10.5px; font-weight: 700; border-radius: 3px; cursor: pointer;">
+        Actions ▾
+      </button>
+      <div id="bmap_actions_dropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: #0b1320; border: 1px solid #203a5e; border-radius: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.8); z-index: 2000; min-width: 230px; font-family: var(--font-mono);">
+        <div onclick="exportBmapGeoJSON()" style="padding: 7px 12px; color: #00e5ff; cursor: pointer; border-bottom: 1px solid #142338; font-size: 10px;">📥 Export Visible Layers (GeoJSON)</div>
+        <div onclick="exportBmapCSV()" style="padding: 7px 12px; color: #ffaa00; cursor: pointer; border-bottom: 1px solid #142338; font-size: 10px;">📊 Export Active Assets (CSV)</div>
+        <div onclick="setProximityAlertModal()" style="padding: 7px 12px; color: #ff3344; cursor: pointer; border-bottom: 1px solid #142338; font-size: 10px;">⚠️ Set CPA Proximity Collision Alert</div>
+        <div onclick="resetBmapAllFilters()" style="padding: 7px 12px; color: #94a3b8; cursor: pointer; border-bottom: 1px solid #142338; font-size: 10px;">🔄 Reset Map &amp; Clear Filters</div>
+        <div onclick="toggleDistanceMeasurement()" style="padding: 7px 12px; color: #34d399; cursor: pointer; font-size: 10px;">📐 Measure Nautical Distance (NM)</div>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="color: #fca5a5; font-size: 10.5px; display: flex; align-items: center; gap: 4px; cursor: pointer;" onclick="jumpToBmapPreset('crude_pipelines')">
+      <span>G 325: Pipelines ⤢ ▾</span>
+    </span>
+    <span style="color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; gap: 4px; cursor: pointer;" onclick="toggleMapContentDrawer()">
+      <span>⤢</span> Custom Map
+    </span>
+  </div>
+</div>
+
+<!-- ── SECONDARY SUB-TOOLBAR (VIEWS, COUNTRY / SECTOR SELECTORS, SEARCH, MAP CONTENT TOGGLE) ── -->
+<div style="background: #090e18; border: 1px solid #1e2e44; border-top: none; padding: 5px 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono);">
+  <!-- View Mode Buttons -->
+  <div style="display: flex; align-items: center; gap: 2px;">
+    <button id="bmap_btn_view_map" onclick="switchBmapView('map')" style="background: #1e3a5f; color: #00e5ff; border: 1px solid #3b82f6; border-bottom: 2px solid #00e5ff; padding: 3px 9px; font-size: 10px; font-weight: 800; border-radius: 2px; cursor: pointer;">Map</button>
+    <button id="bmap_btn_view_table" onclick="switchBmapView('table')" style="background: #0d1624; color: #94a3b8; border: 1px solid #1c2e44; padding: 3px 9px; font-size: 10px; font-weight: 700; border-radius: 2px; cursor: pointer;">Table (Berths/FDIC)</button>
+    <button id="bmap_btn_view_chart" onclick="switchBmapView('chart')" style="background: #0d1624; color: #94a3b8; border: 1px solid #1c2e44; padding: 3px 9px; font-size: 10px; font-weight: 700; border-radius: 2px; cursor: pointer;">Chart (GPC)</button>
+    <button id="bmap_btn_view_news" onclick="switchBmapView('news')" style="background: #0d1624; color: #94a3b8; border: 1px solid #1c2e44; padding: 3px 9px; font-size: 10px; font-weight: 700; border-radius: 2px; cursor: pointer;">News (READ)</button>
+    <button id="bmap_btn_view_splc" onclick="switchBmapView('splc')" style="background: #0d1624; color: #94a3b8; border: 1px solid #1c2e44; padding: 3px 9px; font-size: 10px; font-weight: 700; border-radius: 2px; cursor: pointer;">SPLC (Supply Chain)</button>
+    <button id="bmap_btn_view_fxc" onclick="switchBmapView('fxc')" style="background: #0d1624; color: #94a3b8; border: 1px solid #1c2e44; padding: 3px 9px; font-size: 10px; font-weight: 700; border-radius: 2px; cursor: pointer;">FXC (Currencies)</button>
+    <button id="bmap_btn_view_vol" onclick="switchBmapView('vol')" style="background: #0d1624; color: #94a3b8; border: 1px solid #1c2e44; padding: 3px 9px; font-size: 10px; font-weight: 700; border-radius: 2px; cursor: pointer;">VOL 3D Surface</button>
+  </div>
+
+  <!-- Country & Sector Dropdown Selectors -->
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <span style="color: #ffaa00; font-size: 9.5px; font-weight: 800;">COUNTRY:</span>
+    <select id="bmap_country_select" onchange="onBmapCountrySelect(this.value)" style="background: #05080e; color: #38bdf8; border: 1.5px solid #0284c7; border-radius: 3px; padding: 2px 6px; font-size: 10px; font-weight: 700; font-family: var(--font-mono); outline: none; cursor: pointer;">
+      <option value="ALL">🌐 All Countries (Global Constellation)</option>
+      <option value="US">🇺🇸 United States (FDIC, Hubs, Refineries)</option>
+      <option value="CN">🇨🇳 China (Three Gorges, Yangshan, ZPC)</option>
+      <option value="IN">🇮🇳 India (Jamnagar, Bhadla, NSE, JNPT)</option>
+      <option value="JP">🇯🇵 Japan (Kashiwazaki, TSE, Tokyo Bay)</option>
+      <option value="DE">🇩🇪 Germany (Frankfurt ECB, Rehden, DE-CIX)</option>
+      <option value="GB">🇬🇧 United Kingdom (LSE, Grain LNG, Hornsea)</option>
+      <option value="SA">🇸🇦 Saudi Arabia (Ras Tanura, Jubail, Tadawul)</option>
+      <option value="AE">🇦🇪 United Arab Emirates (Hormuz, Ruwais, Jebel Ali)</option>
+      <option value="QA">🇶🇦 Qatar (Ras Laffan Mega LNG Complex)</option>
+      <option value="SG">🇸🇬 Singapore (Jurong Island, Tuas Port, SGX)</option>
+      <option value="KR">🇰🇷 South Korea (Pyeongtaek, Ulsan, Yeosu)</option>
+      <option value="AU">🇦🇺 Australia (Pilbara Iron, Greenbushes Li)</option>
+      <option value="BR">🇧🇷 Brazil (Itaipu Hydro, Carajás, Santos)</option>
+      <option value="CA">🇨🇦 Canada (Bruce Nuclear, Nutrien Potash)</option>
+      <option value="FR">🇫🇷 France (Gravelines Nuclear, Dunkirk LNG)</option>
+      <option value="NL">🇳🇱 Netherlands (Rotterdam Port, ASML HQ)</option>
+      <option value="CH">🇨🇭 Switzerland (SIX Exchange, Zurich Vaults)</option>
+      <option value="CL">🇨🇱 Chile (Escondida Copper, Atacama Lithium)</option>
+      <option value="ZA">🇿🇦 South Africa (Koeberg Nuclear, Saldanha)</option>
+      <option value="ID">🇮🇩 Indonesia (Grasberg Mine, Smelters)</option>
+      <option value="NG">🇳🇬 Nigeria (Dangote Refinery, Bonny Island)</option>
+    </select>
+
+    <span style="color: #ffaa00; font-size: 9.5px; font-weight: 800; margin-left: 6px;">SECTOR:</span>
+    <select id="bmap_sector_select" onchange="onBmapSectorSelect(this.value)" style="background: #05080e; color: #34d399; border: 1.5px solid #059669; border-radius: 3px; padding: 2px 6px; font-size: 10px; font-weight: 700; font-family: var(--font-mono); outline: none; cursor: pointer;">
+      <option value="ALL">🌐 All Sectors &amp; Infrastructure</option>
+      <option value="vessels">🚢 Live AIS Tanker Fleets &amp; Moveable Vessels</option>
+      <option value="weather">☁️ Weather &amp; Atmospheric Heatmap</option>
+      <option value="world_equity">📈 World Equity Markets Choropleth</option>
+      <option value="bank_branches">🏛️ US Bank Branches (1,675 FDIC Clusters)</option>
+      <option value="crude_pipelines">🛢️ Global Crude Pipelines (Image 27)</option>
+      <option value="natural_gas">⛽ North American Natural Gas Network (Image 12)</option>
+      <option value="power_plants">⚡ Power Plants &amp; Utilities (Nuclear/Hydro/Solar)</option>
+      <option value="refineries">🛢️ Refineries &amp; Petrochemicals</option>
+      <option value="lng_terminals">🧊 LNG Liquefaction &amp; Regas Terminals</option>
+      <option value="seaports">🚢 Mega Seaports &amp; Container Docks</option>
+      <option value="data_centers">🌐 Hyperscale Data Centers &amp; IXPs</option>
+      <option value="fertilizers">🌾 Fertilizer &amp; Agro-Industrial Plants</option>
+      <option value="storage_terminals">🛢️ Strategic Petroleum Reserves &amp; Caverns</option>
+      <option value="weather_stations">⛅ Weather Stations &amp; Marine Buoys (WFOR)</option>
+      <option value="dense_grid">✨ Dense Global Constellation (Image 3)</option>
+    </select>
+  </div>
+
+  <!-- Search input matching Bloomberg terminal prompt -->
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <input type="text" id="bmap_universal_search" onkeyup="handleBmapSearch(event)" placeholder="Add Securities, Data, Locations, WKT, etc." style="width: 240px; background: #05080e; color: #ffaa00; border: 1px solid #ffaa00; border-radius: 3px; padding: 3px 8px; font-size: 10px; font-family: var(--font-mono); outline: none;">
+    <button onclick="toggleMapContentDrawer()" id="btn_draw_content_toggle" style="background: #111a28; color: #ffaa00; border: 1px solid #ffaa00; border-radius: 3px; padding: 3px 10px; font-size: 10px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+      <span>▲ Draw >></span>
+      <span style="color: #fff;">Map Content</span>
+    </button>
+  </div>
+</div>
+
+<!-- ── PRESETS QUICK-JUMP RIBBON (SCREENSHOTS 1, 2, 3, 4, 7, 8, 12, 27) ── -->
+<div style="background: #05080e; border: 1px solid #142338; border-top: none; padding: 4px 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 5px; font-family: var(--font-mono); font-size: 9.5px;">
+  <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
+    <span style="color: #64748b; font-weight: 800;">QUICK JUMPS:</span>
+    <button onclick="jumpToBmapPreset('hormuz')" class="action-btn" style="background: #451a03; color: #fbbf24; border: 1.5px solid #d97706; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">🌊 Hormuz Real Time (Image 4)</button>
+    <button onclick="jumpToBmapPreset('weather_cloud')" class="action-btn" style="background: #1e293b; color: #f8fafc; border: 1.5px solid #94a3b8; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">☁️ Weather: Cloud Cover (Image 1)</button>
+    <button onclick="jumpToBmapPreset('weather_temp')" class="action-btn" style="background: #7c2d12; color: #fde047; border: 1.5px solid #ea580c; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">🌡️ Weather: Temperature (Image 2)</button>
+    <button onclick="jumpToBmapPreset('world_equity')" class="action-btn" style="background: #064e3b; color: #34d399; border: 1.5px solid #10b981; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">📈 World Equity Markets (Image 3)</button>
+    <button onclick="jumpToBmapPreset('crude_pipelines')" class="action-btn" style="background: #1e3a5f; color: #38bdf8; border: 1.5px solid #2563eb; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">🛢️ Global Crude Pipelines (Image 27)</button>
+    <button onclick="jumpToBmapPreset('gas_pipelines')" class="action-btn" style="background: #312e81; color: #a5b4fc; border: 1.5px solid #6366f1; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">⛽ N.Am. Natural Gas (Image 12)</button>
+    <button onclick="jumpToBmapPreset('bank_branches')" class="action-btn" style="background: #0f2e4a; color: #38bdf8; border: 1.5px solid #0284c7; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">🏛️ US Banks (FDIC) (Image 4)</button>
+    <button onclick="jumpToBmapPreset('manhattan')" class="action-btn" style="background: #0f172a; color: #38bdf8; border: 1.5px solid #38bdf8; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">🏢 Manhattan 400 Bway (Image 7, 9, 10)</button>
+    <button onclick="jumpToBmapPreset('greg_mortimer')" class="action-btn" style="background: #4c1d95; color: #e9d5ff; border: 1.5px solid #a855f7; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">🚢 Greg Mortimer Expedition (Image 8)</button>
+    <button onclick="jumpToBmapPreset('dense_grid')" class="action-btn" style="background: #2e1065; color: #facc15; border: 1.5px solid #eab308; padding: 2px 7px; font-size: 9.5px; font-weight: 900; border-radius: 3px; cursor: pointer;">✨ Dense Constellation (Image 3)</button>
+    <button onclick="jumpToBmapPreset('world')" class="action-btn" style="background: #16253b; color: #fff; border: 1px solid #2a4365; padding: 2px 7px; font-size: 9.5px; border-radius: 3px; cursor: pointer;">🌐 World Overview</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ── PRIMARY VIEW 1: INTERACTIVE MAP & DOCKED BLOOMBERG SIDEBAR ── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="bmap_view_container_map" style="display: block;">
+  <div id="bmap_map_wrapper" style="position: relative; width: 100%; height: 750px; background: #000; border: 1px solid #1e2e44; border-top: none; overflow: hidden;">
+    
+    <!-- Leaflet Map Container -->
+    <div id="bmap_leaflet_map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: #04070e;"></div>
+
+    <!-- HTML5 Canvas Overlay for Splines & Dynamic Telemetry -->
+    <canvas id="bmapCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none;"></canvas>
+
+    <!-- HTML5 Canvas Overlay for Weather Heatmaps (Cloud Cover & Temperature) -->
+    <canvas id="bmapWeatherCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; opacity: 0.85; transition: opacity 0.3s ease;"></canvas>
+
+    <!-- Top Left View Bar HUD -->
+    <div style="position: absolute; top: 12px; left: 14px; z-index: 50; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-family: var(--font-mono);">
+      <div style="background: rgba(5,8,15,0.94); border: 1px solid #223750; border-radius: 4px; padding: 4px 10px; font-size: 10px; color: #00e5ff; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.6);">
+        <span>VIEW:</span>
+        <strong id="bmap_scope_label" style="color: #ffaa00;">GLOBAL MARITIME, PIPELINE &amp; MULTI-ASSET RADAR</strong>
+        <span style="color: #334155;">|</span>
+        <span id="bmap_objects_count_badge" style="color: #94a3b8;">60 AIS Vessels · 2,500+ Worldwide Assets In Scope</span>
+        <span style="color: #334155;">|</span>
+        <span id="bmap_cursor_coords" style="color: #64748b;">WGS84: 26.4000° N, 56.2000° E</span>
+      </div>
+
+      <div style="display: flex; gap: 4px; background: rgba(5,8,15,0.94); border: 1px solid #223750; border-radius: 4px; padding: 2px;">
+        <button onclick="setBmapTileLayer('dark')" id="bmap_layer_dark" class="action-btn active" style="font-size: 9px; padding: 3px 6px;">🌑 Bloomberg Dark</button>
+        <button onclick="setBmapTileLayer('satellite')" id="bmap_layer_sat" class="action-btn" style="font-size: 9px; padding: 3px 6px;">🛰️ Real Satellite</button>
+        <button onclick="setBmapTileLayer('nautical')" id="bmap_layer_naut" class="action-btn" style="font-size: 9px; padding: 3px 6px;">🗺️ Nautical Chart</button>
+        <button onclick="setBmapTileLayer('auto')" id="bmap_layer_auto" class="action-btn" style="font-size: 9px; padding: 3px 6px;">🌐 Auto-Adaptive</button>
+      </div>
+
+      <div id="bmap_autofollow_pill" style="display: none; background: #083344; border: 1px solid #06b6d4; border-radius: 4px; padding: 3px 8px; font-size: 9.5px; color: #22d3ee; align-items: center; gap: 6px;">
+        <span>● AUTO-FOLLOW: <strong id="bmap_autofollow_name">SEAWAYS CATALONIA</strong></span>
+        <button onclick="unlockFollowVessel()" style="background: transparent; color: #ff3344; border: none; font-weight: 800; cursor: pointer; font-size: 9px;">Unlock</button>
+      </div>
+    </div>
+
+    <!-- Reopen Map Content Pill (When Sidebar is collapsed) -->
+    <button id="btn_open_drawer_pill" onclick="toggleMapContentDrawer()" style="display: none; position: absolute; top: 12px; right: 14px; z-index: 100; background: #991b1b; color: #fff; border: 1px solid #dc2626; border-radius: 4px; padding: 5px 12px; font-size: 11px; font-weight: 800; font-family: var(--font-mono); cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.8);">
+      Map Content <span id="open_pill_count">6 Active</span> ◀
+    </button>
+
+    <!-- ── AUTHENTIC RIGHT-HAND "MAP CONTENT" DOCKED SIDEBAR (SCREENSHOTS 1, 2, 4, 12, 27) ── -->
+    <div id="bmap_map_content_drawer" style="position: absolute; right: 0; top: 0; bottom: 0; width: 320px; z-index: 120; background: rgba(7, 12, 20, 0.98); backdrop-filter: blur(12px); border-left: 1.5px solid #1f3554; display: flex; flex-direction: column; font-family: var(--font-mono); box-shadow: -8px 0 28px rgba(0,0,0,0.85); transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);">
+      
+      <!-- Drawer Header -->
+      <div style="background: #0d1726; border-bottom: 1.5px solid #1e334d; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: #ffaa00; font-size: 11.5px; font-weight: 900; letter-spacing: 0.5px;">Map Content</span>
+          <span id="active_dataset_count_pill" style="background: #1e3a5f; color: #38bdf8; font-size: 9px; padding: 1.5px 6px; border-radius: 10px; font-weight: 800; border: 1px solid #38bdf8;">6 Active</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <button onclick="openAllDatasetsModal()" title="View Complete Datasets Catalog" style="background: #132032; color: #38bdf8; border: 1px solid #1e3a5f; border-radius: 2px; padding: 2px 6px; font-size: 9px; font-weight: 800; cursor: pointer;">≡ All</button>
+          <button onclick="toggleMapContentDrawer()" title="Collapse Map Content" style="background: transparent; color: #94a3b8; border: none; font-size: 14px; cursor: pointer; font-weight: 800;">✕</button>
+        </div>
+      </div>
+
+      <!-- Drawer Search Box -->
+      <div style="padding: 6px 10px; border-bottom: 1px solid #162438; background: #060b13;">
+        <div style="position: relative;">
+          <input type="text" id="dataset_filter_input" oninput="filterDatasetSidebar(this.value)" placeholder="Search 36+ Datasets..." style="width: 100%; background: #090f1a; color: #fff; border: 1px solid #1c2e44; border-radius: 3px; padding: 5px 8px; font-size: 10px; font-family: var(--font-mono); outline: none;">
+          <span onclick="document.getElementById('dataset_filter_input').value=''; filterDatasetSidebar('');" style="position: absolute; right: 8px; top: 5px; color: #64748b; font-size: 10px; cursor: pointer;">✕</span>
+        </div>
+      </div>
+
+      <!-- Scrollable Datasets & Active Cards Area -->
+      <div style="flex: 1; overflow-y: auto; padding: 8px 10px; display: flex; flex-direction: column; gap: 10px;">
+        
+        <!-- SECTION 1: ACTIVE DATASET CONTROL CARDS (Docked at top of Map Content) -->
+        <div>
+          <div style="color: #ffaa00; font-size: 10px; font-weight: 900; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2a1f0a; padding-bottom: 3px;">
+            <span>ACTIVE LAYERS &amp; CONTROLS</span>
+            <span style="color: #64748b; font-size: 8.5px;">Click card to collapse</span>
+          </div>
+          <div id="active_dataset_cards_container" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Dynamic active dataset cards will be rendered here -->
+          </div>
+        </div>
+
+        <!-- SECTION 2: SUGGESTED DATASETS ACCORDION (SCREENSHOT 1, 2, 4, 12, 27) -->
+        <div style="border-top: 1px solid #162438; padding-top: 8px;">
+          <div onclick="toggleSectionAccordion('suggested')" style="color: #fff; font-size: 10.5px; font-weight: 800; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span id="accordion_icon_suggested" style="color: #ffaa00; font-size: 11px;">▾</span>
+              <span>Suggested Datasets</span>
+            </div>
+            <span style="color: #94a3b8; font-size: 9px; font-weight: 700; background: #111a28; padding: 1px 5px; border-radius: 3px; border: 1px solid #1c2e44;">24 Datasets</span>
+          </div>
+          <div id="suggested_datasets_list" style="display: flex; flex-direction: column; gap: 2px;">
+            <!-- Populated dynamically with Bloomberg + buttons -->
+          </div>
+          <div style="margin-top: 6px; padding: 4px 6px; border-top: 1px dashed #1e2e44; display: flex; justify-content: space-between; align-items: center;">
+            <span onclick="openAllDatasetsModal()" style="color: #38bdf8; font-size: 9.5px; font-weight: 800; cursor: pointer;">≡ View All Datasets</span>
+            <span style="color: #64748b; font-size: 8.5px;">36 Available</span>
+          </div>
+        </div>
+
+        <!-- SECTION 3: NEW DATASETS ACCORDION (SCREENSHOT 1, 2, 4, 12, 27) -->
+        <div style="border-top: 1px solid #162438; padding-top: 8px;">
+          <div onclick="toggleSectionAccordion('new')" style="color: #38bdf8; font-size: 10.5px; font-weight: 800; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span id="accordion_icon_new" style="color: #38bdf8; font-size: 11px;">▾</span>
+              <span>New Datasets</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 9px; font-weight: 700; background: #0c1c2e; padding: 1px 5px; border-radius: 3px; border: 1px solid #1e3a5f;">12 Recent</span>
+          </div>
+          <div id="new_datasets_list" style="display: flex; flex-direction: column; gap: 2px;">
+            <!-- Populated dynamically with Bloomberg + buttons -->
+          </div>
+        </div>
+
+        <!-- SECTION 4: BASEMAP SELECTOR ACCORDION -->
+        <div style="border-top: 1px solid #162438; padding-top: 8px; margin-bottom: 10px;">
+          <div onclick="toggleSectionAccordion('basemap')" style="color: #94a3b8; font-size: 10px; font-weight: 800; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span id="accordion_icon_basemap" style="color: #ffaa00; font-size: 11px;">▾</span>
+              <span>Basemap</span>
+            </div>
+            <span style="color: #ffaa00; font-size: 8.5px;">Zero Watermark</span>
+          </div>
+          <div id="basemap_selector_content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+            <button onclick="setBmapTileLayer('dark')" style="background: #111b2b; color: #ffaa00; border: 1px solid #1e334d; padding: 4px; font-size: 9px; border-radius: 2px; cursor: pointer; font-weight: 700;">Bloomberg Dark</button>
+            <button onclick="setBmapTileLayer('satellite')" style="background: #111b2b; color: #38bdf8; border: 1px solid #1e334d; padding: 4px; font-size: 9px; border-radius: 2px; cursor: pointer; font-weight: 700;">Real Satellite</button>
+            <button onclick="setBmapTileLayer('nautical')" style="background: #111b2b; color: #34d399; border: 1px solid #1e334d; padding: 4px; font-size: 9px; border-radius: 2px; cursor: pointer; font-weight: 700;">Nautical Chart</button>
+            <button onclick="setBmapTileLayer('auto')" style="background: #111b2b; color: #e2e8f0; border: 1px solid #1e334d; padding: 4px; font-size: 9px; border-radius: 2px; cursor: pointer; font-weight: 700;">Auto-Adaptive</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer Action Bar -->
+      <div style="background: #090f1a; border-top: 1.5px solid #1e334d; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 9.5px;">
+        <span onclick="resetBmapAllFilters()" style="color: #ef4444; cursor: pointer; font-weight: 700;">↺ Reset All</span>
+        <button onclick="toggleMapContentDrawer()" style="background: #1e3a5f; color: #00e5ff; border: 1px solid #3b82f6; border-radius: 2px; padding: 3px 8px; font-size: 9.5px; font-weight: 800; cursor: pointer;">Close Drawer ✕</button>
+      </div>
+
+    </div>
+
+    <!-- ── AUTHENTIC DYNAMIC FLOATING LEGENDS CONTAINER (BOTTOM-LEFT) ── -->
+    <div id="bmap_legends_container" style="position: absolute; bottom: 25px; left: 16px; z-index: 100; display: flex; flex-direction: column; gap: 8px; pointer-events: auto;">
+      
+      <!-- LEGEND 1: WEATHER CLOUD COVER HEATMAP (SCREENSHOT 1) -->
+      <div id="bmap_legend_cloud_cover" style="display: none; background: rgba(5,8,15,0.94); border: 1px solid #475569; border-radius: 4px; padding: 8px 12px; font-family: var(--font-mono); box-shadow: 0 4px 16px rgba(0,0,0,0.85); width: 220px;">
+        <div style="color: #fff; font-size: 10px; font-weight: 800; margin-bottom: 4px;">Cloud Cover</div>
+        <div style="display: flex; justify-content: space-between; color: #94a3b8; font-size: 8.5px; margin-bottom: 3px;">
+          <span>0 (%)</span>
+          <span>100</span>
+        </div>
+        <div style="width: 100%; height: 10px; border-radius: 2px; background: linear-gradient(to right, #000000 0%, #334155 35%, #94a3b8 70%, #ffffff 100%); border: 1px solid #334155;"></div>
+      </div>
+
+      <!-- LEGEND 2: WEATHER TEMPERATURE HEATMAP (SCREENSHOT 2) -->
+      <div id="bmap_legend_temperature" style="display: none; background: rgba(5,8,15,0.94); border: 1px solid #475569; border-radius: 4px; padding: 8px 12px; font-family: var(--font-mono); box-shadow: 0 4px 16px rgba(0,0,0,0.85); width: 220px;">
+        <div style="color: #ffaa00; font-size: 10px; font-weight: 800; margin-bottom: 4px;">Temperature</div>
+        <div style="display: flex; justify-content: space-between; color: #94a3b8; font-size: 8.5px; margin-bottom: 3px;">
+          <span>-140 (F)</span>
+          <span>140</span>
+        </div>
+        <div style="width: 100%; height: 10px; border-radius: 2px; background: linear-gradient(to right, #001233 0%, #0077b6 25%, #00f5d4 45%, #fee440 65%, #f77f00 85%, #d62828 100%); border: 1px solid #334155;"></div>
+      </div>
+
+      <!-- LEGEND 3: WORLD EQUITY MARKETS CHOROPLETH (SCREENSHOT 2 & 3) -->
+      <div id="bmap_legend_world_equity" style="display: none; background: rgba(5,8,15,0.94); border: 1px solid #203a5e; border-radius: 4px; padding: 8px 12px; font-family: var(--font-mono); box-shadow: 0 4px 16px rgba(0,0,0,0.85); width: 220px;">
+        <div style="color: #fff; font-size: 10px; font-weight: 800; margin-bottom: 4px;">World Equity Markets</div>
+        <div style="display: flex; justify-content: space-between; align-items: center; color: #94a3b8; font-size: 8.5px; margin-bottom: 3px;">
+          <span style="color: #ff3344; font-weight: 700;">↓ -2.0 (% Chg)</span>
+          <span style="color: #00e676; font-weight: 700;">2.0 ↑</span>
+        </div>
+        <div style="width: 100%; height: 10px; border-radius: 2px; background: linear-gradient(to right, #dc2626 0%, #7f1d1d 30%, #1e293b 50%, #065f46 70%, #10b981 100%); border: 1px solid #334155;"></div>
+      </div>
+
+      <!-- LEGEND 4: BANK BRANCHES (US) CONCENTRIC RADAR RINGS (SCREENSHOT 4) -->
+      <div id="bmap_radar_legend" style="display: none; background: rgba(5,8,15,0.94); border: 1px solid #203a5e; border-radius: 4px; padding: 10px 14px; font-family: var(--font-mono); box-shadow: 0 4px 16px rgba(0,0,0,0.85); width: 220px;">
+        <div style="color: #94a3b8; font-size: 10px; font-weight: 700; margin-bottom: 2px; letter-spacing: 0.5px;">Bank Branches (US)</div>
+        <div style="color: #64748b; font-size: 9px; margin-bottom: 6px;">Branch Deposit Amounts</div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="position: relative; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+            <div style="position: absolute; width: 44px; height: 44px; border: 1.5px solid #a855f7; border-radius: 50%; opacity: 0.6;"></div>
+            <div style="position: absolute; width: 28px; height: 28px; border: 1.5px solid #a855f7; border-radius: 50%; opacity: 0.85;"></div>
+            <div style="position: absolute; width: 14px; height: 14px; border: 1.5px solid #a855f7; border-radius: 50%;"></div>
+            <div style="width: 4px; height: 4px; background: #38bdf8; border-radius: 50%;"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <div style="color: #a855f7; font-size: 9px; font-weight: 800;">500,000,000+</div>
+            <div style="color: #94a3b8; font-size: 8.5px;">0 (USD)</div>
+            <div style="display: flex; align-items: center; gap: 4px; margin-top: 2px;">
+              <div style="width: 6px; height: 6px; background: #38bdf8; border-radius: 50%;"></div>
+              <span style="color: #cbd5e1; font-size: 9px;">• Branch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEGEND 5: NORTH AMERICAN NATURAL GAS PIPELINES (SCREENSHOT 12) -->
+      <div id="bmap_legend_gas_pipelines" style="display: none; background: rgba(5,8,15,0.94); border: 1px solid #203a5e; border-radius: 4px; padding: 8px 12px; font-family: var(--font-mono); box-shadow: 0 4px 16px rgba(0,0,0,0.85); width: 220px;">
+        <div style="color: #fff; font-size: 10px; font-weight: 800; margin-bottom: 4px;">Pipelines (N.Am.)</div>
+        <div style="display: flex; flex-direction: column; gap: 3px; font-size: 9px;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="color: #f97316; font-size: 12px;">•</span>
+            <span style="color: #cbd5e1;">Interstate</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="color: #00e5ff; font-size: 12px;">•</span>
+            <span style="color: #cbd5e1;">Intrastate</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="color: #eab308; font-size: 12px;">•</span>
+            <span style="color: #cbd5e1;">Storage</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="color: #22c55e; font-size: 12px;">•</span>
+            <span style="color: #cbd5e1;">Other</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── AUTHENTIC BOTTOM RIGHT FLOATING LEGEND & ATTRIBUTION (SCREENSHOT 4, 12, 27) ── -->
+    <div style="position: absolute; bottom: 20px; right: 330px; z-index: 90; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; font-family: var(--font-mono); pointer-events: none;">
+      <!-- Pipeline & Vessel Type Legend (Screenshot 27) -->
+      <div id="bmap_legend_vessel_crude" style="display: flex; flex-direction: column; gap: 3px; background: rgba(5,8,15,0.92); border: 1px solid #16253b; border-radius: 4px; padding: 6px 10px; font-size: 9px; box-shadow: 0 4px 12px rgba(0,0,0,0.8);">
+        <div style="color: #94a3b8; font-weight: 700; margin-bottom: 1px;">Vessels</div>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="color: #00e5ff; font-weight: 800;">→</span>
+          <span style="color: #fff;">Oil</span>
+        </div>
+        <div style="color: #94a3b8; font-weight: 700; margin-top: 4px; margin-bottom: 1px;">Crude Oil Pipelines</div>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="color: #3b82f6; font-weight: 800; font-size: 11px;">—</span>
+          <span style="color: #fff;">Crude Oil Pipeline</span>
+        </div>
+      </div>
+
+      <!-- Scale bar -->
+      <div style="display: flex; align-items: center; gap: 6px; background: rgba(5,8,15,0.92); border: 1px solid #16253b; border-radius: 3px; padding: 2px 8px; font-size: 8.5px; color: #94a3b8;">
+        <span>2000 km</span>
+        <span>|</span>
+        <span>1000 mi</span>
+      </div>
+
+      <!-- Attribution Footer -->
+      <div style="color: #475569; font-size: 8.5px; text-shadow: 0 1px 3px #000;">
+        Bloomberg Finance L.P., Mapbox, OpenStreetMap, Global Oil Infrastructure Tracker, Global Energy Monitor, FDIC
+      </div>
+    </div>
+
+    <!-- ── AUTHENTIC MANHATTAN STREET BRANCH POPUP (SCREENSHOT 7, 9, 10) ── -->
+    <div id="bmap_branch_popup" style="display: none; position: absolute; bottom: 25px; right: 335px; width: 310px; z-index: 110; background: rgba(5,8,15,0.96); border: 1.5px solid #38bdf8; border-radius: 4px; padding: 10px 12px; font-family: var(--font-mono); box-shadow: 0 8px 30px rgba(0,0,0,0.9); font-size: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e334d; padding-bottom: 4px; margin-bottom: 6px;">
+        <strong id="pop_branch_name" style="color: #00e5ff; font-size: 11px;">Third Avenue &amp; 41st Street Branch</strong>
+        <span onclick="document.getElementById('bmap_branch_popup').style.display='none';" style="cursor: pointer; color: #94a3b8; font-weight: 800;">✕</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: #94a3b8;">Company Name:</span>
+          <strong id="pop_branch_company" style="color: #ffaa00;">JPMorgan Chase Bank National Association</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: #94a3b8;">Branch Total Deposits (USD):</span>
+          <strong id="pop_branch_dep" style="color: #00e676;">1,214,602</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: #94a3b8;">Company Domestic Deposits (USD):</span>
+          <span id="pop_branch_comp_dep" style="color: #fff;">2,128,462,000</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: #94a3b8;">Company Total Assets (USD):</span>
+          <span id="pop_branch_comp_assets" style="color: #fff;">3,914,143,296</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: #94a3b8;">Report Year:</span>
+          <span id="pop_branch_year" style="color: #94a3b8;">2022</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- ── AUTHENTIC UNIVERSAL LIVE AIS VESSEL INSPECTOR POPUP (SCREENSHOT 8 & 21) ── -->
+    <div id="bmap_universal_vessel_popup" style="display: none; position: absolute; bottom: 85px; right: 335px; width: 300px; z-index: 110; background: rgba(5,8,15,0.96); border: 1.5px solid #00e5ff; border-radius: 4px; padding: 10px 12px; font-family: var(--font-mono); font-size: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.9);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #162438; padding-bottom: 4px; margin-bottom: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span id="uni_vessel_name" style="color: #00e5ff; font-weight: 800; font-size: 11px;">SEAWAYS CATALONIA</span>
+          <span id="uni_vessel_type" style="background: #1e3a5f; color: #38bdf8; font-size: 8.5px; padding: 1px 4px; border-radius: 2px;">VLCC</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <span onclick="document.getElementById('bmap_universal_vessel_popup').style.display='none';" style="cursor: pointer; color: #94a3b8; font-weight: 800;">✕</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Navigation Status:</span><span id="uni_vessel_status" style="color: #00e676;">Under way using engine</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">IMO / MMSI:</span><span id="uni_vessel_imo" style="color: #fff;">9394562 / 538002941</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Owner / Charterer:</span><span id="uni_vessel_owner" style="color: #ffaa00;">International Seaways</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Destination:</span><strong id="uni_vessel_dest" style="color: #38bdf8;">China (Ningbo)</strong></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Berth / Zone:</span><span id="uni_vessel_berth" style="color: #cbd5e1;">Strait of Hormuz Inbound</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Speed / Course:</span><span id="uni_vessel_speed" style="color: #00e676; font-weight: bold;">11.4 kn @ 68°</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Draft / DWT:</span><span id="uni_vessel_draft_dwt" style="color: #ffaa00;">21.2m · 318,000 MT</span></div>
+        <div style="position: relative; margin-top: 4px;">
+          <button onclick="toggleUniversalVesselMoreDropdown()" style="background: #111f33; color: #00e5ff; border: 1px solid #1e3a5f; padding: 3px 8px; font-size: 9.5px; border-radius: 2px; cursor: pointer; font-weight: 700;">More ▾</button>
+          <div id="uni_vessel_more_dropdown" style="display: none; position: absolute; bottom: 100%; left: 0; margin-bottom: 2px; background: #0b1320; border: 1px solid #203a5e; border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.8); z-index: 10; min-width: 180px;">
+            <div onclick="alert('IMO Vessel Overview & Registration Log');" style="padding: 5px 8px; color: #38bdf8; cursor: pointer; border-bottom: 1px solid #162438;">IMO - Vessel Overview</div>
+            <div onclick="alert('Port Calling History: RAS TANURA, NINGBO, SINGAPORE');" style="padding: 5px 8px; color: #ffaa00; cursor: pointer; border-bottom: 1px solid #162438;">IMO - Port Calling &amp; Schedule</div>
+            <div onclick="alert('AHOY Fixture History: TIME CHARTER $48,500/DAY');" style="padding: 5px 8px; color: #00e676; cursor: pointer; border-bottom: 1px solid #162438;">AHOY - Fixture &amp; Charter Rates</div>
+            <div onclick="alert('Live AIS NMEA Sensor Stream: LAT 26.35, LON 56.12, SOG 11.4');" style="padding: 5px 8px; color: #cbd5e1; cursor: pointer;">AIS Raw NMEA Telemetry Log</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── AUTHENTIC GREG MORTIMER EXPEDITION POPUP (SCREENSHOT 8) ── -->
+    <div id="bmap_greg_mortimer_popup" style="display: none; position: absolute; bottom: 85px; left: 16px; width: 280px; z-index: 110; background: rgba(5,8,15,0.96); border: 1.5px solid #6366f1; border-radius: 4px; padding: 10px 12px; font-family: var(--font-mono); font-size: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.9);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #312e81; padding-bottom: 4px; margin-bottom: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="color: #a5b4fc; font-weight: 800;">GREG MORTIMER</span>
+          <span style="background: #312e81; color: #c7d2fe; font-size: 8.5px; padding: 1px 4px; border-radius: 2px;">Passenger</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px;">
+          <span onclick="document.getElementById('bmap_greg_mortimer_popup').style.display='none';" style="cursor: pointer; color: #94a3b8;">–</span>
+          <span onclick="document.getElementById('bmap_greg_mortimer_popup').style.display='none';" style="cursor: pointer; color: #94a3b8; font-weight: 800;">✕</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Navigation Status:</span><span style="color: #00e676;">Under way using engine</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">IMO:</span><span style="color: #fff;">9834648</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Destination:</span><strong style="color: #ffaa00;">DEVIL ISLAND</strong></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">ETA (User Local Timezone):</span><span style="color: #cbd5e1;">03/04/2023 13:00:00</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Vessel Type:</span><span style="color: #cbd5e1;">Passenger</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Current Speed (kts):</span><span style="color: #38bdf8;">10.5</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Current Draft:</span><span style="color: #ffaa00;">5.2</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: #94a3b8;">Max Draft:</span><span style="color: #ffaa00;">5.3</span></div>
+        <div style="position: relative; margin-top: 4px;">
+          <button onclick="toggleGregMortimerMoreDropdown()" style="background: #1e293b; color: #fff; border: 1px solid #334155; padding: 3px 8px; font-size: 9.5px; border-radius: 2px; cursor: pointer;">More ▾</button>
+          <div id="greg_more_dropdown" style="display: none; position: absolute; bottom: 100%; left: 0; margin-bottom: 2px; background: #0b1320; border: 1px solid #334155; border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.8); z-index: 10; min-width: 160px;">
+            <div onclick="alert('IMO Vessel Overview: GREG MORTIMER');" style="padding: 5px 8px; color: #38bdf8; cursor: pointer; border-bottom: 1px solid #162438;">IMO - Vessel Overview</div>
+            <div onclick="alert('Port Calling History: USHUAIA, DEVIL ISLAND');" style="padding: 5px 8px; color: #ffaa00; cursor: pointer; border-bottom: 1px solid #162438;">IMO - Port Calling</div>
+            <div onclick="alert('AHOY Fixture History: AURORA EXPEDITIONS 2023-2026');" style="padding: 5px 8px; color: #00e676; cursor: pointer;">AHOY - Fixture History</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── AUTHENTIC VIEW ALL DATASETS MODAL DIALOG (SCREENSHOT 1, 2, 4) ── -->
+<div id="bmap_all_datasets_modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 3000; align-items: center; justify-content: center; font-family: var(--font-mono);">
+  <div style="background: #080e18; border: 1.5px solid #203a5e; border-radius: 6px; width: 750px; max-width: 90vw; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 16px 48px rgba(0,0,0,0.95);">
+    <div style="background: #0d1726; border-bottom: 1px solid #1e334d; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #ffaa00; font-size: 13px; font-weight: 900;">BLOOMBERG TERMINAL · ALL MAP DATASETS CATALOG</span>
+        <span style="background: #1e3a5f; color: #38bdf8; font-size: 10px; padding: 2px 6px; border-radius: 3px;">36 Datasets</span>
+      </div>
+      <button onclick="closeAllDatasetsModal()" style="background: transparent; color: #94a3b8; border: none; font-size: 16px; cursor: pointer; font-weight: 800;">✕</button>
+    </div>
+    <div style="padding: 10px 16px; border-bottom: 1px solid #162438;">
+      <input type="text" id="modal_dataset_search" oninput="filterModalDatasets(this.value)" placeholder="Filter catalog by name, sector or commodity..." style="width: 100%; background: #05080e; color: #ffaa00; border: 1px solid #203a5e; border-radius: 3px; padding: 6px 10px; font-size: 11px; font-family: var(--font-mono); outline: none;">
+    </div>
+    <div id="modal_datasets_body" style="flex: 1; overflow-y: auto; padding: 14px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+      <!-- Populated dynamically with categorized datasets -->
+    </div>
+    <div style="background: #090f1a; border-top: 1px solid #1e334d; padding: 8px 16px; display: flex; justify-content: flex-end;">
+      <button onclick="closeAllDatasetsModal()" style="background: #1e3a5f; color: #00e5ff; border: 1px solid #3b82f6; border-radius: 3px; padding: 5px 14px; font-size: 10.5px; font-weight: 800; cursor: pointer;">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ── SECONDARY VIEW 2: BERTH VISITS & FDIC COMMERCIAL VAULTS TABLE ── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="bmap_view_container_table" style="display: none; background: #05080e; border: 1px solid #1e2e44; border-top: none; padding: 14px; font-family: var(--font-mono);">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #162438; padding-bottom: 8px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <strong style="color: #ffaa00; font-size: 13px;">BMAP BERTH VISITS &amp; GLOBAL MARITIME TERMINAL LOG</strong>
+      <span style="background: #111a28; color: #00e5ff; font-size: 10px; padding: 2px 8px; border-radius: 3px; border: 1px solid #1e334d;">21 Terminal Calls</span>
+    </div>
+    <div style="display: flex; gap: 6px;">
+      <button onclick="renderBmapTableData('berths')" class="action-btn active" id="btn_tbl_berths">Berth Visits (Screenshot 5)</button>
+      <button onclick="renderBmapTableData('branches')" class="action-btn" id="btn_tbl_branches">FDIC Top Branches (US)</button>
+    </div>
+  </div>
+  <div style="max-height: 600px; overflow-y: auto;">
+    <table class="data-table" id="bmap_master_data_table">
+      <thead>
+        <tr id="bmap_tbl_head_tr"></tr>
+      </thead>
+      <tbody id="bmap_tbl_body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ── SECONDARY VIEW 3: GPC CANDLESTICK & TECHNICAL CHART (SCREENSHOT 14, 15, 16) ── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="bmap_view_container_chart" style="display: none; background: #05080e; border: 1px solid #1e2e44; border-top: none; padding: 14px; font-family: var(--font-mono);">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <strong style="color: #ffaa00; font-size: 13px;">GPC CANDLESTICK &amp; SYMMETRICAL TRIANGLE BREAKOUT</strong>
+      <span style="color: #00e676; font-size: 11px; font-weight: 700;">DAILY D · RSI(14): 64.2 · MACD BULL CROSS</span>
+    </div>
+  </div>
+  <div style="position: relative; width: 100%; height: 580px; background: #03060a; border: 1px solid #121e2d; border-radius: 4px;">
+    <canvas id="bmap_gpc_chart_canvas"></canvas>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ── SECONDARY VIEW 4: READ NEWS STORIES (SCREENSHOT 18, 19) ── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="bmap_view_container_news" style="display: none; background: #05080e; border: 1px solid #1e2e44; border-top: none; padding: 14px; font-family: var(--font-mono);">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #162438; padding-bottom: 8px;">
+    <strong style="color: #ffaa00; font-size: 13px;">READ &lt;GO&gt; — MOST READ GLOBAL NEWS STORIES</strong>
+  </div>
+  <div id="bmap_news_stories_container" style="display: flex; flex-direction: column; gap: 6px; max-height: 600px; overflow-y: auto;"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ── SECONDARY VIEW 5: SPLC SUPPLY CHAIN (SCREENSHOT 20, 24, 25) ── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="bmap_view_container_splc" style="display: none; background: #05080e; border: 1px solid #1e2e44; border-top: none; padding: 14px; font-family: var(--font-mono);">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #162438; padding-bottom: 8px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <strong style="color: #ffaa00; font-size: 13px;">SPLC &lt;GO&gt; — MULTI-TIER INSTITUTIONAL SUPPLY CHAIN</strong>
+      <select id="splc_firm_select" onchange="renderSplcNetwork(this.value)" style="background: #0d1624; color: #00e5ff; border: 1px solid #203a5e; font-size: 11px; font-weight: 700; border-radius: 3px; padding: 2px 8px; outline: none;">
+        <option value="AAPL">APPLE INC (AAPL US)</option>
+        <option value="LMT">LOCKHEED MARTIN (LMT US)</option>
+        <option value="TSLA">TESLA INC (TSLA US)</option>
+      </select>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 280px 1fr 280px; gap: 14px; min-height: 580px;">
+    <div style="background: #070d18; border: 1px solid #16253b; border-radius: 4px; padding: 10px;">
+      <div style="color: #38bdf8; font-size: 11px; font-weight: 800; border-bottom: 1px solid #1e334d; padding-bottom: 6px; margin-bottom: 8px;">SUPPLIERS (TIER-1)</div>
+      <div id="splc_suppliers_list" style="display: flex; flex-direction: column; gap: 6px;"></div>
+    </div>
+    <div style="background: #03060c; border: 1px solid #16253b; border-radius: 4px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <canvas id="splcNetworkCanvas" style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <div style="background: #070d18; border: 1px solid #16253b; border-radius: 4px; padding: 10px;">
+      <div style="color: #34d399; font-size: 11px; font-weight: 800; border-bottom: 1px solid #1e334d; padding-bottom: 6px; margin-bottom: 8px;">CUSTOMERS &amp; CHANNELS</div>
+      <div id="splc_customers_list" style="display: flex; flex-direction: column; gap: 6px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ── SECONDARY VIEW 6: FXC CURRENCY RATES MATRIX (SCREENSHOT 1) ── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="bmap_view_container_fxc" style="display: none; background: #05080e; border: 1px solid #1e2e44; border-top: none; padding: 14px; font-family: var(--font-mono);">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #162438; padding-bottom: 8px;">
+    <strong style="color: #ffaa00; font-size: 13px;">FXC &lt;GO&gt; — GLOBAL SPOT &amp; FORWARD CURRENCY MATRIX</strong>
+  </div>
+  <div style="max-height: 600px; overflow-y: auto;">
+    <table class="data-table" id="bmap_fxc_matrix_table">
+      <thead>
+        <tr>
+          <th>FLAG</th>
+          <th>PAIR</th>
+          <th>NAME</th>
+          <th>SPOT RATE</th>
+          <th>NET CHG</th>
+          <th>% CHG</th>
+          <th>1M FWD</th>
+          <th>3M FWD</th>
+          <th>12M FWD</th>
+          <th>52W RANGE</th>
+        </tr>
+      </thead>
+      <tbody id="bmap_fxc_tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ── SECONDARY VIEW 7: VOL 3D VOLATILITY SURFACE (SCREENSHOT 13, 17) ── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="bmap_view_container_vol" style="display: none; background: #05080e; border: 1px solid #1e2e44; border-top: none; padding: 14px; font-family: var(--font-mono);">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #162438; padding-bottom: 8px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <strong style="color: #ffaa00; font-size: 13px;">VOL &lt;GO&gt; — 3D IMPLIED VOLATILITY SURFACE (TSLA US OPTIONS)</strong>
+      <span style="color: #00e676; font-size: 10.5px;">MONEYNESS (K/S) × EXPIRY (DAYS) → IV (%)</span>
+    </div>
+    <div style="display: flex; gap: 6px;">
+      <button onclick="rotateVolSurface(-15)" class="action-btn">⟲ Rotate Left</button>
+      <button onclick="rotateVolSurface(15)" class="action-btn">⟳ Rotate Right</button>
+    </div>
+  </div>
+  <div style="position: relative; width: 100%; height: 580px; background: #03060c; border: 1px solid #16253b; border-radius: 4px; overflow: hidden;">
+    <canvas id="bmapVolCanvas" style="width: 100%; height: 100%;"></canvas>
+  </div>
+</div>
+'''
+
+html_content = generate_html_template()
+with open(os.path.join(BASE_DIR, "bmap_html_template.html"), "w", encoding="utf-8") as f:
+    f.write(html_content)
+print(f"Generated bmap_html_template.html ({len(html_content)} bytes)")
+

@@ -1,0 +1,71 @@
+# ==============================================================================
+# EconAgent Platform — Git Ignore Configuration
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments & Credentials
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+ENV/
+env/
+
+# Node.js / Web Dependencies & Logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Runtime logs, caches, and QA artifacts
+*.log
+.playwright-mcp/
+.gev-logs/
+.gev-cache/
+qa-artifacts/
+screenshots/
+qa-shots/
+pinokio/ENVIRONMENT
+pinokio/.installed
+
+# Cloned external skill repositories (reproducible via python downloaded_skills/clone_skills.py)
+downloaded_skills/anthropic-skills/
+downloaded_skills/awesome-claude-code/
+downloaded_skills/claude-mem/
+downloaded_skills/superpowers/
+downloaded_skills/ui-ux-pro-max-skill/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+

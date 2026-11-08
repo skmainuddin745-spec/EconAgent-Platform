@@ -1,0 +1,54 @@
+{
+  "platform": "EconAgent Platform",
+  "version": "1.0.0",
+  "build_timestamp": "2026-11-08T19:42:43.406187+00:00",
+  "data_assets": {
+    "total_files": 514,
+    "loaded_ok": 506
+  },
+  "analysis": {
+    "total_results": 251,
+    "agents": [
+      "ERPAnalysisAgent",
+      "BetaAnalysisAgent",
+      "MarginsAgent",
+      "ValuationMultiplesAgent",
+      "GrowthRateAgent",
+      "CapitalStructureAgent",
+      "CostOfCapitalAgent",
+      "DividendPayoutAgent",
+      "WorkingCapitalAgent",
+      "TaxRateAgent",
+      "CapexReinvestmentAgent",
+      "EconomicValueAddedAgent",
+      "CorporateGovernanceAgent",
+      "IntangiblesGoodwillAgent",
+      "OptionVolatilityAgent",
+      "FinancingFlowsAgent",
+      "SOICTechnicalRankingAgent",
+      "OilTankerCommodityAgent"
+    ]
+  },
+  "verification": {
+    "pass": 248,
+    "fail": 3,
+    "pass_rate_pct": 98.8,
+    "signature": "b0dce941e1d0e88e56b7f3a2f2eb0fb9a17153e042e89172d579f317562c978f"
+  },
+  "harness": {
+    "papers_corpus_verified": true,
+    "audit_certificate_present": true,
+    "engine_modules": [
+      "agent_roles.py",
+      "consensus_deliberation_engine.py",
+      "harness_core.py",
+      "run_system_demo.py",
+      "task_ledger.py",
+      "zero_hallucination_evidence_grounded_engine.py"
+    ]
+  },
+  "papers_corpus": {
+    "count": 105,
+    "verified": true
+  }
+}

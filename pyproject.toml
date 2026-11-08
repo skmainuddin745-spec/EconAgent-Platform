@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "econagent-platform"
+version = "2.1.0"
+authors = [
+  { name="Sk. Mainuddin", email="sk.mainuddin745@gmail.com" },
+]
+description = "Institutional Bloomberg-Grade Multi-Agent Economic Analysis, Dynamic Scenario Simulator & Geospatial Maritime Tanker Tracking Engine"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "pandas>=1.5.0",
+    "numpy>=1.23.0",
+    "xlrd==2.0.2",
+    "openpyxl>=3.0.0",
+    "scipy>=1.9.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/skmainuddin745-spec/EconAgent-Platform"
+"Bug Tracker" = "https://github.com/skmainuddin745-spec/EconAgent-Platform/issues"
+
