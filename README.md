@@ -173,19 +173,44 @@ Visual telemetry displaying the 18 specialized autonomous economic analysis agen
 ---
 
 ### 12. BMAP Maritime Vector Radar & Crude Oil Flow Tracking (`BMAP <GO>`)
-Hardware-accelerated vector canvas tracking 45+ commercial oil tankers live across strategic sea-lanes.
-![BMAP Maritime Vector Radar](docs/screenshots/terminal_bmap_maritime_radar.jpg)
-- **Vector Canvas Radar:** High-density rendering of tanker positions, Course Over Ground (COG), Speed Over Ground (SOG), and draught.
-- **AIS Telemetry Inspector:** Click-to-inspect tanker metadata including MMSI, IMO, Deadweight Tonnage (DWT), origin port, destination, and estimated arrival.
-- **Viewport Switcher:** Instant panning across 6 strategic regions (US Gulf & Houston Ship Channel, Strait of Hormuz, Strait of Malacca, Suez/Bab el-Mandeb, Rotterdam, and Global Oceans).
+Hardware-accelerated Leaflet/HTML5 vector canvas tracking commercial crude carriers, transcontinental energy pipelines, and FDIC wealth hubs live across strategic sea-lanes.
+
+![BMAP Maritime Vector Radar](docs/screenshots/terminal_bmap_maritime_radar.png)
+
+> **Live Local Client Location:** `platform_ui/EconAgent_Dashboard.html` (Master Bloomberg Terminal, 3.01 MB self-contained) and `platform_ui/Bloomberg_BMAP_Terminal.html` (Dedicated BMAP Terminal, 1.73 MB). Open instantly in any modern browser: `Start-Process "platform_ui\EconAgent_Dashboard.html"`.
+> *(Note: The monolithic compiled HTML client files are generated locally in `platform_ui/` and maintained untracked in Git to prevent repository bloat while preserving 100% full local interactive capabilities).*
+
+- **Vector Canvas Radar Architecture:** Real-time hardware-accelerated 2D Leaflet canvas rendering 60+ AIS-tracked vessels, 1,675 FDIC banking centroids, and major North American interstate gas and crude pipeline corridors in Bloomberg Dark terminal styling (`WGS84: 34.0000° N, -92.0000° W`).
+- **Transcontinental Arterial Pipelines:** Live trace of high-capacity energy transit arteries:
+  - *Tennessee Gas Pipeline (TGP Interstate):* 19,150 km system, Kinder Morgan, 13.9 Bcf/d capacity operating at 94.6% capacity (`In Service / High Flow`).
+  - *Transco Major Arterial:* 17.3 Bcf/d interstate link connecting Gulf Coast production to New York and mid-Atlantic markets.
+  - *Copano & Alliance Arterials:* Liquids-rich and gathering links feeding Louisiana Offshore Oil Port (LOOP) and Houston refining complexes.
+- **Universal Inspector Pop-Up HUD:** Interactive docked telemetry inspector displaying real-time operational status, holding company ownership, throughput bounds, and direct actions (`[Zoom To]`, `[View History]`, `More ▾`).
+- **G-SIB Bank Branches & Wealth Hubs:** Geocoded radial cluster overlay of nationwide financial hubs scaled by FDIC deposit volume ($500M+ baseline, filtered to $4,700M+ mega-hubs in New York, Chicago, Charlotte, and Houston).
+- **Interactive Multi-Layer HUD Drawer (`Map Content 10 Active`):** Sidecard telemetry deck providing instant toggle and parametric control over atmospheric weather (cloud cover, surface temperature), global equity indices (SPX, NIFTY, NKY, DAX with dynamic bull/bear dispersion), and active vessel tracking filters.
 
 ---
 
 ### 13. Global Choke Point Transit Delay & Supply-Chain Shocks
-Geopolitical bottleneck telemetry monitoring global oil transit volumes and calculating commodity shock propagation to equity valuations.
-![Global Choke Points Telemetry](docs/screenshots/terminal_bmap_chokepoints.jpg)
-- **Bottleneck Transit Monitor:** Live status and volume throughput across Strait of Hormuz (20.8 Mbd, 20.6% of global oil), Strait of Malacca (16.2 Mbd), Suez/Bab el-Mandeb (8.8 Mbd), and Houston Ship Channel (3.4 Mbd).
-- **Feedstock Shock Transmission:** Mathematically translates sea-lane transit delays into feedstock cost inflation ($\Delta \text{COGS}$), corporate EBITDA margin compression, and terminal DCF re-ratings.
+Geopolitical bottleneck telemetry monitoring global crude transit corridors, vessel dwell times, and calculating commodity price shock propagation to corporate equity valuations.
+
+![Global Choke Points Telemetry](docs/screenshots/terminal_bmap_chokepoints.png)
+
+> **Live Local Client Location:** `platform_ui/EconAgent_Dashboard.html` (Tab `[F9] BMAP Tankers & Flows` → `East (Hormuz) ►`) or `platform_ui/Bloomberg_BMAP_Terminal.html`.
+
+- **Bottleneck Transit Radar (Strait of Hormuz):** Live telemetry monitoring the world's most critical energy artery ($26.4000^\circ\text{ N}, 56.2000^\circ\text{ E}$), handling 20.8 million barrels/day (Mbd) of seaborne oil (~20.6% of global petroleum consumption).
+- **AIS Tanker Telemetry Inspector:** Click-to-inspect vessel tracking modal detailing real-time AIS transponder packets:
+  - *Vessel:* `SEAWAYS CATALONIA` (Ultra Large Crude Carrier / ULCC)
+  - *IMO / MMSI:* `9394562` / `538002941` | *Owner / Charterer:* International Seaways
+  - *Deadweight Tonnage (DWT):* 318,000 MT | *Draft:* 21.2 m
+  - *Navigation Vector:* Speed Over Ground (SOG) 11.4 knots @ Course Over Ground (COG) 066°
+  - *Berth / Zone:* Strait of Hormuz Inbound Traffic Separation Scheme (TSS) → Destination: Ningbo, China
+- **Petroline East-West Bypass Corridor:** Traces the 48-inch/56-inch East-West Crude Pipeline (5.0 Mbd expandable to 7.0 Mbd) spanning 1,200 km from Abqaiq across the Arabian Peninsula to Yanbu on the Red Sea, mathematically modeling bypass elasticity when maritime choke points experience elevated risk premia.
+- **Demurrage & Feedstock Margin Transmission Mathematics:**
+  Translates sea-lane dwell time delays ($\tau_{\text{transit}}$) into freight demurrage surcharges ($C_{\text{demurrage}}$), Cost of Goods Sold expansion ($\Delta \text{COGS}$), corporate EBITDA margin compression, and terminal DCF re-ratings:
+  $$\Delta \text{COGS}_{i} = Q_{\text{feedstock}, i} \times \left( \Delta P_{\text{crude}} + \frac{C_{\text{demurrage}} \times \tau_{\text{transit}}}{\text{Cargo Volume}} \right)$$
+  $$\Delta \text{EBITDA Margin}_{i} = \frac{\text{EBITDA}_{0, i} - \Delta \text{COGS}_{i}}{\text{Revenue}_{0, i} \times (1 + \epsilon_{p} \cdot \Delta P_{\text{crude}})} - \text{Margin}_{0, i}$$
+  $$\Delta \text{EV} = - \sum_{t=1}^{N} \frac{\Delta \text{FCFF}_{t}}{(1 + \text{WACC})^{t}} - \frac{\Delta \text{FCFF}_{N+1}}{(\text{WACC} - g)(1 + \text{WACC})^{N}}$$
 
 ---
 
