@@ -104,3 +104,40 @@ The BMAP interface is implemented as a high-density, zero-dependency HTML5 `<can
    - Origin Port, Destination, and Estimated Time of Arrival (ETA).
    - Real-time sensitivity badge linking the vessel's cargo to downstream industrial tickers.
 
+---
+
+## 5. Live Photoview Telemetry & Interactive Terminal Workstations
+
+> **Live Local Client Location:**  
+> - Master Multi-Agent Terminal: `platform_ui/EconAgent_Dashboard.html` (Tab `[F9] BMAP Tankers & Flows`, 3.01 MB self-contained)  
+> - Dedicated Maritime BMAP Terminal: `platform_ui/Bloomberg_BMAP_Terminal.html` (1.73 MB self-contained)  
+> *Note: Monolithic compiled HTML client builds are maintained untracked in Git to prevent repository bloat, but are readily executable locally via `Start-Process "platform_ui\EconAgent_Dashboard.html"`.*
+
+### 5.1 Continental US Vector Radar & Energy Transmission Corridors
+High-resolution DOM capture of the North American energy infrastructure and maritime vessel approaches.
+
+![BMAP Continental US Maritime Vector Radar](screenshots/terminal_bmap_maritime_radar.png)
+
+- **Cartographic Coordinates & Scope:** Viewport centered at `WGS84: 34.0000° N, -92.0000° W` (Gulf Coast & Continental US) with high-density Leaflet canvas rendering.
+- **Arterial Interstate Pipelines:**
+  - *Tennessee Gas Pipeline (TGP Interstate):* 19,150 km network operated by Kinder Morgan, transmitting 13.9 Bcf/d of natural gas at 94.6% operational flow capacity.
+  - *Transco Major Arterial:* 17.3 Bcf/d interstate link connecting Texas and Louisiana production to the northeastern metropolitan corridor.
+  - *Crude Logistics Corridors:* Keystone and DAPL links delivering heavy and light sweet crude to Gulf Coast refiners.
+- **G-SIB Wealth Centroids:** 1,675 FDIC banking branch clusters scaled radially by deposit concentration ($500M+ baseline, filtered to $4,700M+ institutional hubs).
+- **Maritime Transponders:** Active fleet clusters approaching the Louisiana Offshore Oil Port (LOOP) and Houston Ship Channel.
+
+### 5.2 Middle East Choke Point & Strait of Hormuz Telemetry
+Live AIS tanker radar monitoring the Strait of Hormuz Traffic Separation Scheme (TSS) and Saudi Aramco Petroline bypass.
+
+![BMAP Strait of Hormuz Chokepoints Telemetry](screenshots/terminal_bmap_chokepoints.png)
+
+- **Bottleneck Transit Dynamics:** Viewport centered on `WGS84: 26.4000° N, 56.2000° E`, monitoring 20.8 Mbd of crude flow (~20.6% of global oil consumption).
+- **Live AIS Tanker Inspection:**
+  - *Vessel:* `SEAWAYS CATALONIA` (Ultra Large Crude Carrier / ULCC)
+  - *IMO / MMSI:* `9394562` / `538002941` | *Owner / Charterer:* International Seaways
+  - *Deadweight Tonnage (DWT):* 318,000 MT | *Draft:* 21.2 m
+  - *Kinematics:* Speed Over Ground (SOG) 11.4 kn @ Course Over Ground (COG) 066°
+  - *Berth / Zone:* Strait of Hormuz Inbound TSS → Destination: Ningbo, China
+- **Petroline East-West Bypass Arterial:** Traces the 48-inch/56-inch East-West Crude Pipeline (5.0 Mbd expandable to 7.0 Mbd) spanning 1,200 km from Abqaiq across the Arabian Peninsula to Yanbu on the Red Sea, enabling bypass of the Strait of Hormuz during maritime disruptions.
+
+
