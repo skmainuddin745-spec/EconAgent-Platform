@@ -113,9 +113,23 @@ The BMAP interface is implemented as a high-density, zero-dependency HTML5 `<can
 > - Dedicated Maritime BMAP Terminal: `platform_ui/Bloomberg_BMAP_Terminal.html` (1.73 MB self-contained)  
 > *Note: Monolithic compiled HTML client builds are maintained untracked in Git to prevent repository bloat, but are readily executable locally via `Start-Process "platform_ui\EconAgent_Dashboard.html"`.*
 
-### 5.0 Flagship Optical Reconnaissance: Ras Tanura & Manhattan Sub-Meter Satellite Verifications
+### 5.0 Flagship Optical Reconnaissance: Hormuz Chokepoint, Ras Tanura & Manhattan Sub-Meter Satellite Verifications
 
-#### View 5.0A Ras Tanura / Hormuz Oil Export Terminal — Zoom 16 Sub-Meter Satellite Verification
+#### View 5.0A Strait of Hormuz & Middle East Chokepoint — Real-Time Sub-Meter Satellite Reconnaissance with Live AIS Vessel Telemetry & Dropdown HUD
+Regional multi-spectral optical satellite reconnaissance ($26.4000^\circ\text{ N}, 56.2000^\circ\text{ E}$) with live vessel mouseover hover, universal AIS telemetry inspector, and interactive action dropdown HUD.
+
+![Strait of Hormuz Real-Time Satellite Telemetry with Dropdown](screenshots/terminal_bmap_satellite_verified.png)
+
+- **Live AIS Vessel Mouseover & Telemetry HUD:** Active hover over Ultra Large Crude Carrier (ULCC) `SEAWAYS CATALONIA` (IMO: `9394562` / MMSI: `538002941`, DWT: 318,000 MT, Draft: 21.2 m, Speed: 11.4 kn @ 066° inbound through the Strait of Hormuz Traffic Separation Scheme).
+- **Interactive Action Dropdown HUD:** Live display of the active vessel action dropdown modal exposing four forensic operational feeds:
+  1. `IMO - Vessel Overview` (Registry, classification society, double-hull compliance, P&I club).
+  2. `IMO - Port Calling & Schedule` (Historical calls: Ras Tanura, Fujairah, Ningbo, Singapore).
+  3. `AHOY - Fixture & Charter Rates` (Time charter rate fixture: \$48,500/day, Worldscale spot index).
+  4. `AIS Raw NMEA Telemetry Log` (Live unadulterated NMEA 0183 transponder sentence stream: `!AIVDM...`).
+- **Saudi Aramco Petroline Overland Bypass:** Live optical trace of the 1,200 km East-West Crude Pipeline (5.0 Mbd expandable to 7.0 Mbd) spanning from Abqaiq across the Arabian Peninsula to the Red Sea port of Yanbu, mathematically modeling bypass volume elasticity during naval blockades.
+- **Sovereign Liquidity Nodes:** Geocoded banking centroids ($500M+ to $4,700M+ deposits) overlaid atop physical topography, correlating oil terminals with institutional cash reserves.
+
+#### View 5.0B Ras Tanura / Hormuz Oil Export Terminal — Zoom 16 Sub-Meter Satellite Verification
 High-magnification optical reconnaissance ($26.6433^\circ\text{ N}, 50.1581^\circ\text{ E}$) resolving physical tank farm inventories, floating-roof shadow displacement, and VLCC berth occupancy against reporting AIS transponders.
 
 ![Ras Tanura Sub-Meter Satellite Verification](screenshots/terminal_submeter_optical_rastanura.png)
@@ -124,7 +138,7 @@ High-magnification optical reconnaissance ($26.6433^\circ\text{ N}, 50.1581^\cir
 - **Deepwater Sea Island & Jetty Berthing:** Validates physical loading arms, causeways, and SPM berths hosting VLCC and ULCC carriers loading Arab Light, Arab Heavy, and Arab Extra Light crude grades.
 - **Anti-Spoofing Transponder Reconciliation:** Optical wake vector and hull waterline detection eliminates AIS spoofing and dark fleet transponder tampering by cross-verifying reported MMSI telemetry against physical vessel presence.
 
-#### View 5.0B Manhattan 400 Broadway — Zoom 18 Sub-Meter Street-Level Financial Center Verification
+#### View 5.0C Manhattan 400 Broadway — Zoom 18 Sub-Meter Street-Level Financial Center Verification
 Street-level optical reconnaissance ($40.7182^\circ\text{ N}, -74.0028^\circ\text{ W}$) validating physical banking infrastructure, G-SIB branch density, and deposit concentration in downtown Manhattan.
 
 ![Manhattan 400 Broadway Sub-Meter Satellite Verification](screenshots/terminal_submeter_optical_manhattan.png)
