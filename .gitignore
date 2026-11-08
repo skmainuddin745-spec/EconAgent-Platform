@@ -45,6 +45,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# Generated HTML dashboards & runtime builds (proprietary build artifacts / run locally)
+platform_ui/EconAgent_Dashboard.html
+platform_ui/Bloomberg_BMAP_Terminal.html
+*_Dashboard.html
+*Terminal.html
+
 # Runtime logs, caches, and QA artifacts
 *.log
 .playwright-mcp/

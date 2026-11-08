@@ -42,7 +42,13 @@ While general-purpose generative AI models suffer from severe numerical hallucin
 
 ## 💻 Interactive Bloomberg Terminal UI
 
-The platform builds and renders a fully interactive, self-contained Bloomberg Terminal simulation (`platform_ui/EconAgent_Dashboard.html`):
+The platform compiles into an institutional-grade, self-contained Bloomberg Terminal simulation executed locally:
+
+> **Live Local 2D HTML Runtimes (Deterministic Client Builds):**
+> * **Master Terminal Dashboard:** `platform_ui/EconAgent_Dashboard.html` (Generated on local workstation · Self-contained 2.94 MB HTML · Zero cloud dependency)
+> * **Dedicated BMAP Maritime Terminal:** `platform_ui/Bloomberg_BMAP_Terminal.html` (Hardware-accelerated vector canvas · 1.73 MB HTML)
+> * **Live Execution:** `py -3.12 run_platform.py` compiles the clean primary data and launches the runtime locally.
+> * **Repository Architecture:** Following the institutional hygiene protocol of [`AI-Closed-Loop-Dyeing-Bangladesh`](https://github.com/skmainuddin745-spec/AI-Closed-Loop-Dyeing-Bangladesh), compiled monolithic HTML distribution binaries are excluded from Git version tracking (`.gitignore`), while their complete visual evidence, empirical telemetry, and mathematical verdicts are comprehensively audited below through 13 high-resolution photographic workstation views.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
