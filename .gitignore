@@ -51,10 +51,13 @@ yarn-error.log*
 .gev-logs/
 .gev-cache/
 qa-artifacts/
-screenshots/
 qa-shots/
 pinokio/ENVIRONMENT
 pinokio/.installed
+
+# Allow docs screenshots for README and documentation photoview
+!docs/screenshots/
+!docs/screenshots/*
 
 # Cloned external skill repositories (reproducible via python downloaded_skills/clone_skills.py)
 downloaded_skills/anthropic-skills/

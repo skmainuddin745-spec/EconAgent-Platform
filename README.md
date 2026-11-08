@@ -67,9 +67,119 @@ The platform builds and renders a fully interactive, self-contained Bloomberg Te
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **Bloomberg Function Keys:** Instant hotkey execution `[F1]` Overview, `[F2]` ERP Analysis, `[F3]` Beta Decomposition, `[F4]` Operating Margins, `[F5]` Valuation Multiples, `[F6]` Growth Dynamics, `[F7]` Capital Structure, `[F8]` WACC Hurdle, `[F9]` Dividends & Payouts, `[F10]` Working Capital, `[F11]` SOIC Rankings, `[F12]` BMAP Maritime Radar.
-- **Dynamic Scenario Simulator:** Parametric real-time sliders for $R_f$, $\text{ERP}$, operating margin delta ($\Delta \text{EBIT}$), tax wedge, and working capital drag, dynamically re-calculating DCF equity valuations.
-- **3D God's Eye View Integration:** Native bridge to photorealistic 3D Cesium globe rendering satellite-tracked crude tankers, submarine telecommunication cables, and banking infrastructure nodes.
+The terminal interface deploys as a standalone client application (**Doc ID: `ECON-DASH-V2-SKM-2026` · SHA-256: `b0dce941e1d0e88e56b7f3a2f2eb0fb9a17153e042e89172d579f317562c978f`**). Below is the comprehensive forensic photographic walkthrough of its 13 primary workstations:
+
+---
+
+### 1. Master Terminal Deck & Institutional Overview
+The master command desk unifies macroeconomic discount rates, sovereign yield curves, real-time market tickers, and corporate asset intelligence in a high-density Bloomberg interface.
+![Master Terminal Command Deck](docs/screenshots/terminal_hero_overview.png)
+- **Top Ribbon Clocks:** Real-time synchronized market session clocks (New York, London, Tokyo, Mumbai, Singapore).
+- **Global Macro Ticker:** Real-time tracking of EUR/USD, Brent Crude ($/bbl), US 10Y Yield, India 10Y G-Sec, and Gold ($/oz).
+- **Execution Bar:** Direct `<GO>` syntax execution dispatching multi-agent routines (`ERP <GO>`, `BMAP <GO>`, `SOIC <GO>`, `WACC <GO>`).
+
+---
+
+### 2. Tab [F10] — Macro Dynamic Scenario Simulator & Hurdle Rates
+A real-time macro sensitivity engine modeling the transmission of systemic monetary shocks to enterprise valuations across $T+0$ to $T+10Y$ time horizons.
+![Macro Dynamic Scenario Simulator](docs/screenshots/terminal_f10_macro_simulator.png)
+- **Interactive Parametric Sliders:** Real-time manipulation of Risk-Free Rate ($\Delta R_f$), Equity Risk Premium ($\Delta \text{ERP}$), Operating Margin Delta ($\Delta \text{EBIT}$), and Terminal Growth ($\Delta g$).
+- **Instantaneous Valuation Shock:** Dynamically computes re-rated WACC hurdle rates and propagates discounted cash flow re-ratings across 5,000+ equity tickers.
+- **Yield Curve Topology:** Decomposes the term structure of interest rates into sovereign liquidity and inflation risk components.
+
+---
+
+### 3. Tab [F5] — SOIC 310-Point Scorecard Leaderboard
+Automated institutional equity screening based on the School of Intrinsic Compounding (SOIC) framework, decomposing businesses across five fundamental pillars.
+![SOIC 310-Point Scorecard Leaderboard](docs/screenshots/terminal_f5_soic_scorecard.png)
+- **Pillar Weighting:** Industry Attractiveness (45 pts), Business Fundamentals & Capital Allocation (80 pts), Technicals & Weinstein Stage (110 pts), Valuation & Margin of Safety (35 pts), and Forensics & Governance (40 pts).
+- **Compounder Tiering:** Companies scoring $\ge 240$ qualify as Tier-1 Institutional Compounders with durable competitive moats.
+- **Forensic Verification:** Automated Beneish M-Score and cash-flow-to-EBITDA ratio validation ensuring zero accounting red flags.
+
+---
+
+### 4. Tab [F3] — Stan Weinstein 4-Stage Quantitative Screening & Technicals
+Algorithmic implementation of Stan Weinstein's classic market cycle model to identify institutional accumulation and reject distribution traps.
+![Stan Weinstein 4-Stage Quantitative Screening](docs/screenshots/terminal_f3_weinstein_technicals.png)
+- **Stage Classification:** Stage 1 (Base Building), Stage 2 (Advancing Phase — Institutional Accumulation), Stage 3 (Distribution / Top Area), Stage 4 (Capitulation / Declining Phase).
+- **Breakout Validation Engine:** Confirms Stage 2 breakouts using 30-week weighted moving averages (30-WMA) and volume thresholds ($\ge 2.0\times$ 50-day average volume).
+- **Relative Strength Ratio:** Tracks the Mansfield Relative Strength (RS) ratio against the benchmark index to ensure sustained institutional momentum.
+
+---
+
+### 5. Tab [F8] — Capital Allocation & Global Financing Flows
+Cross-regional econometric synthesis tracking how global corporations distribute and expand capital across interest rate cycles.
+![Capital Allocation and Financing Flows](docs/screenshots/terminal_f8_financing_flows.png)
+- **Dividends vs. Share Buybacks:** Tracks the structural shift toward equity repurchases in the US ($1.45 : $1.00$ repurchase-to-dividend ratio).
+- **Post-Rate-Hike Debt Deleveraging:** Captures European corporate net debt contraction (**$-8.79\%$**) and Rest of World balance-sheet deleveraging (**$-44.32\%$**) following monetary tightening.
+- **Equity Dilution Index:** Flags persistent share issuances and stock-based compensation overhang.
+
+---
+
+### 6. Institutional Giants & Float Concentration
+Forensic tracking of voting control, insider holdings, and institutional ownership concentration across global capital markets.
+![Institutional Giants and Ownership Concentration](docs/screenshots/terminal_institutional_titans.png)
+- **Asset Manager Influence:** Maps collective ownership stakes held by BlackRock, Vanguard, and State Street across core index constituents.
+- **Governance Alignment:** Computes the insider ownership ratio and dual-class share voting divergence to assess minority shareholder risk.
+- **Free Float Liquidity:** Evaluates effective tradable float versus locked institutional holdings.
+
+---
+
+### 7. 94 Global Industry Damodaran Benchmark Suite
+Comprehensive sector-level corporate finance benchmarks compiled from NYU Stern's raw tabular dataset.
+![Damodaran 94 Industry Benchmark Suite](docs/screenshots/terminal_damodaran_94_industries.png)
+- **Granular Sector Topologies:** Covers 94 global industry classifications from Advertising to Semiconductor Equipment.
+- **Fundamental Ratios:** Displays cross-sectional medians for Gross Margin (US: 34.82%), Operating Margin (11.45%), Net Margin (6.84%), Unlevered Beta (0.94), and WACC (7.22%).
+- **Reinvestment Rates:** Maps CapEx-to-Depreciation ratios to identify expansionary versus sunset industrial sectors.
+
+---
+
+### 8. Top-Down Sectoral Rotation & Relative Momentum
+Cyclical asset allocation radar mapping sectoral leadership and valuation percentiles across economic expansion phases.
+![Sectoral Rotation Matrix](docs/screenshots/terminal_sectoral_rotation.png)
+- **Relative Rotation Quadrants:** Categorizes sectors into Leading, Weakening, Lagging, and Improving relative to the benchmark index.
+- **Historical Valuation Percentiles:** Contrasts current P/E, P/B, and EV/EBITDA multiples against 10-year historical percentiles to flag defensive premiums and cyclical discounts.
+
+---
+
+### 9. Global Semiconductor & Technology Supply-Chain Cockpit
+Specialized supply-chain intelligence tracking foundry lead times, capex reinvestment, and technological rent-seeking.
+![Semiconductor Supply Chain Cockpit](docs/screenshots/terminal_semiconductor_cockpit.png)
+- **Foundry Utilization:** Tracks TSMC, Samsung, and Intel wafer margins and packaging bottlenecks.
+- **R&D Capitalization:** Adjusts accounting net income by treating research and development expenditures as long-term capital assets rather than operating expenses.
+
+---
+
+### 10. Multi-Asset Screener & 48,000+ Global Company Lookup
+High-performance in-memory screener indexing financial fundamentals across 48,000+ global corporate entities.
+![Multi-Asset Global Screener](docs/screenshots/terminal_global_company_lookup.png)
+- **Sub-Second Search:** Instant regex search across ticker, company name, industry, and country.
+- **Multi-Pillar Diagnostics:** Instant preview of ROIC, debt coverage, working capital cycle, and Damodaran sector peer comparisons.
+
+---
+
+### 11. Multi-Agent Deliberation Pods & Consensus Engine
+Visual telemetry displaying the 18 specialized autonomous economic analysis agents during runtime execution.
+![Multi-Agent Deliberation Pods](docs/screenshots/terminal_topnotch_agent_pods.png)
+- **Autonomous Agent Pods:** Real-time state of `ERPAnalysisAgent`, `MarginsAgent`, `BetaAnalysisAgent`, `WACCAgent`, etc.
+- **Evidence Verification Chips:** Live display of SHA-256 evidence citations, row sample counts, and econometric bounding verdicts.
+
+---
+
+### 12. BMAP Maritime Vector Radar & Crude Oil Flow Tracking (`BMAP <GO>`)
+Hardware-accelerated vector canvas tracking 45+ commercial oil tankers live across strategic sea-lanes.
+![BMAP Maritime Vector Radar](docs/screenshots/terminal_bmap_maritime_radar.jpg)
+- **Vector Canvas Radar:** High-density rendering of tanker positions, Course Over Ground (COG), Speed Over Ground (SOG), and draught.
+- **AIS Telemetry Inspector:** Click-to-inspect tanker metadata including MMSI, IMO, Deadweight Tonnage (DWT), origin port, destination, and estimated arrival.
+- **Viewport Switcher:** Instant panning across 6 strategic regions (US Gulf & Houston Ship Channel, Strait of Hormuz, Strait of Malacca, Suez/Bab el-Mandeb, Rotterdam, and Global Oceans).
+
+---
+
+### 13. Global Choke Point Transit Delay & Supply-Chain Shocks
+Geopolitical bottleneck telemetry monitoring global oil transit volumes and calculating commodity shock propagation to equity valuations.
+![Global Choke Points Telemetry](docs/screenshots/terminal_bmap_chokepoints.jpg)
+- **Bottleneck Transit Monitor:** Live status and volume throughput across Strait of Hormuz (20.8 Mbd, 20.6% of global oil), Strait of Malacca (16.2 Mbd), Suez/Bab el-Mandeb (8.8 Mbd), and Houston Ship Channel (3.4 Mbd).
+- **Feedstock Shock Transmission:** Mathematically translates sea-lane transit delays into feedstock cost inflation ($\Delta \text{COGS}$), corporate EBITDA margin compression, and terminal DCF re-ratings.
 
 ---
 
