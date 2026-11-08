@@ -39,7 +39,8 @@ class TestDashboardIntegrity(unittest.TestCase):
             "terminal_global_company_lookup.png",
             "terminal_topnotch_agent_pods.png",
             "terminal_bmap_maritime_radar.png",
-            "terminal_bmap_chokepoints.png"
+            "terminal_bmap_chokepoints.png",
+            "terminal_bmap_satellite_verified.png"
         ]
         
         for shot_name in expected_shots:

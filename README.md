@@ -214,6 +214,22 @@ Geopolitical bottleneck telemetry monitoring global crude transit corridors, ves
 
 ---
 
+### 14. Real-Time Sub-Meter Satellite Optical Imagery Verification (`BMAP SAT <GO>`)
+High-resolution sub-meter multispectral optical satellite reconnaissance cross-validating physical vessel positions, offshore berths, and pipeline rights-of-way against synthetic AIS transponder feeds.
+
+![Real-Time Sub-Meter Satellite Verification](docs/screenshots/terminal_bmap_satellite_verified.png)
+
+> **Live Local Client Location:** `platform_ui/EconAgent_Dashboard.html` (Tab `[F9] BMAP Tankers & Flows` → Layer Mode: `Real Satellite`) or `platform_ui/Bloomberg_BMAP_Terminal.html`.
+
+- **Sub-Meter Optical Sensor Calibration:** Ground-truth multispectral satellite imagery calibrated at 0.3m–0.5m Ground Sampling Distance (GSD), georeferenced under WGS84 coordinates (`26.4000° N, 56.2000° E`) covering the Persian Gulf, Strait of Hormuz, and Arabian Peninsula.
+- **Physical Ground-Truth Verification:** Cross-verifies reported AIS radio transponder vectors against actual satellite reflectance signatures:
+  - Validates physical tanker wake vectors, ballast/laden waterlines, and offshore single-point mooring (SPM) berths across Ras Tanura, Fujairah, and Mina Al Ahmadi.
+  - Mitigates "AIS spoofing" and "dark fleet" transponder manipulation by reconciling satellite optical detection with reported AIS MMSI trajectories.
+- **Saudi Aramco Petroline Optical Right-of-Way:** Resolves the physical overland trenching and pumping station infrastructure of the 48/56-inch East-West Crude Pipeline spanning 1,200 km from the Abqaiq stabilization plant across the desert expanse to the Red Sea port of Yanbu, verifying viable bypass elasticity ($5.0\text{ Mbd} \to 7.0\text{ Mbd}$).
+- **Planetary Sovereign Wealth & Liquidity Hubs:** Overlays G-SIB banking centroids and GCC sovereign liquidity nodes directly atop physical terrain, correlating physical energy export hubs with institutional reserve buffers.
+
+---
+
 ## 🤖 Multi-Agent System Architecture
 
 The orchestration engine runs 18 specialized autonomous economic agents across the normalized Damodaran data assets:
