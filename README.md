@@ -16,7 +16,9 @@
 
 ## 📑 Table of Contents
 1. [Executive Overview](#-executive-overview)
-2. [Interactive Bloomberg Terminal UI](#-interactive-bloomberg-terminal-ui)
+2. [Interactive Bloomberg Terminal UI & Flagship Satellite Verification](#-interactive-bloomberg-terminal-ui)
+   - [Flagship Ground-Truth Verification (Ras Tanura & Manhattan)](#-flagship-ground-truth-verification-real-time-sub-meter-optical-satellite-imagery)
+   - [Workstations 1–14 Comprehensive Forensic Walkthrough](#1-master-terminal-deck--institutional-overview)
 3. [Multi-Agent System Architecture](#-multi-agent-system-architecture)
 4. [The 18 Specialized Economic Agents](#-the-18-specialized-economic-agents)
 5. [Theoretical & Mathematical Foundations](#-theoretical--mathematical-foundations)
@@ -48,7 +50,7 @@ The platform compiles into an institutional-grade, self-contained Bloomberg Term
 > * **Master Terminal Dashboard:** `platform_ui/EconAgent_Dashboard.html` (Generated on local workstation · Self-contained 2.94 MB HTML · Zero cloud dependency)
 > * **Dedicated BMAP Maritime Terminal:** `platform_ui/Bloomberg_BMAP_Terminal.html` (Hardware-accelerated vector canvas · 1.73 MB HTML)
 > * **Live Execution:** `py -3.12 run_platform.py` compiles the clean primary data and launches the runtime locally.
-> * **Repository Architecture:** Following the institutional hygiene protocol of [`AI-Closed-Loop-Dyeing-Bangladesh`](https://github.com/skmainuddin745-spec/AI-Closed-Loop-Dyeing-Bangladesh), compiled monolithic HTML distribution binaries are excluded from Git version tracking (`.gitignore`), while their complete visual evidence, empirical telemetry, and mathematical verdicts are comprehensively audited below through 13 high-resolution photographic workstation views.
+> * **Repository Architecture:** Following the institutional hygiene protocol of [`AI-Closed-Loop-Dyeing-Bangladesh`](https://github.com/skmainuddin745-spec/AI-Closed-Loop-Dyeing-Bangladesh), compiled monolithic HTML distribution binaries are excluded from Git version tracking (`.gitignore`), while their complete visual evidence, empirical telemetry, and mathematical verdicts are comprehensively audited below through 16 high-resolution photographic workstation and flagship satellite reconnaissance views.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
